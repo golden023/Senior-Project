@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "C:/Users/ssinc/senior-project/node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
             "scripts": []
