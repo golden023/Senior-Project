@@ -1,0 +1,61 @@
+<div class="siteLogo" role="banner">
+  <a href="http://localhost:4200/" title="home">
+    <img width="500" alt="Angular Logo" src="../assets/tempLogo.png" />
+  </a>
+</div>
+<nav [ngClass]="'menu'">
+  <a routerLink="/home" routerLinkActive="active-link">Home</a>
+  <a routerLink="/all" routerLinkActive="active-link">All Kits</a>
+  <a routerLink="/event" routerLinkActive="active-link">Event Kits</a>
+  <a routerLink="/gift" routerLinkActive="active-link">Gift Baskets</a>
+  <a routerLink="/sale" routerLinkActive="active-link">Sale Kits</a>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>
+<footer class="page-footer font-small blue pt-4">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase">Get Exclusive Offers & Updates</h5>
+        <form class="input-group">
+          <input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button mdbBtn color="white" outline="true" size="sm" type="button" mdbWavesEffect>Sign up</button>
+          </div>
+        </form>
+      </div>
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">HOW CAN WE HELP?</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Customer Service</a>
+          </li>
+          <li>
+            <a href="#!">Track My Order</a>
+          </li>
+          <li>
+            <a href="#!">Returns</a>
+          </li>
+          <li>
+            <a href="#!">Gift Vouchers</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">ABOUT US</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">About Sitename</a>
+          </li>
+          <li>
+            <a href="#!">Site Map</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright text-center py-3">Copyright © 2019
+  </div>
+</footer>
