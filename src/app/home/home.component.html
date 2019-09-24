@@ -1,17 +1,32 @@
-<div id="home-carousel" class="carousel slide" data-ride="carousel">
+<div id="home-carousel" class="carousel slide my-4" data-ride="carousel">
     <!--Indicators-->
     <ul class="carousel-indicators">
-        <li data-target="indicator" data-slide-to="0" class="active"></li>
-        <li data-target="indicator" data-slide-to="1" ></li>
-        <li data-target="indicator" data-slide-to="2"></li>
+        <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#home-carousel" data-slide-to="1" ></li>
+        <li data-target="#home-carousel" data-slide-to="2"></li>
     </ul>
 
     <!--Slides-->
-    <div class="carousel-inner">
+    <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
-                <img alt="Grand Opening Cupon" src="../assets/grand-opening.jpg" /> 
+                <img class="d-block img-fluid" alt="Grand Opening Cupon" src="../assets/grand-opening.jpg" /> 
+        </div>
+        <div class="carousel-item active">
+                <img class="d-block img-fluid" alt="Grand Opening Cupon" src="../assets/grand-opening.jpg" /> 
+        </div>
+        <div class="carousel-item active">
+                <img class="d-block img-fluid" alt="Grand Opening Cupon" src="../assets/grand-opening.jpg" /> 
         </div>
     </div>
+    <!--controls-->
+    <a class="carousel-control-prev" href="#home-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#home-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
 </div>
 <!-- </div>
 <div class="col-lg-12">
