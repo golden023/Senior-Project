@@ -1,0 +1,63 @@
+.siteLogo {
+  display: flex;
+  width: 98.55%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.siteLogo a {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu {
+  height: 70px;
+  display: flex;
+  width: 98.55%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+.menu a {
+  letter-spacing: 3px;
+  color: white;
+  vertical-align: middle;
+  font-size: 1.1em;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 4em;
+}
+.menu a:hover {
+  font-size: 1.35em;
+  text-decoration: none;
+}
+.grand-opening {
+  height: 3em;
+}
+a {
+  color: black;
+  text-decoration-color: maroon;
+}
+h5 {
+  color: maroon;
+}
+.row {
+  margin: auto;
+}
+.input-group {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.col-md-6 h5 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+button {
+  background-color: maroon;
+  color: white;
+}
+button:hover {
+  background-color: rgba(128, 0, 0, 0.8);
+  color: white;
+}
