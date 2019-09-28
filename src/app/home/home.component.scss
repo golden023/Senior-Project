@@ -22,11 +22,12 @@ ngb-carousel {
 }
 h3 {
   text-align: center;
-  color: #696969;
+  color: #6F6B6B;
   padding: 5px;
   text-transform: uppercase;
-  font-size: 2em;
-}/*
+  font-size: 2.2em;
+  font-weight: 450;
+} /*
 .col-lg-4 {
   max-height: 400px;
 }
@@ -69,17 +70,18 @@ h3 {
   opacity: 0;
   max-height: 0;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 .card:hover {
   height: 400px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 10%;
+  margin-bottom: 8%;
 }
 .card:hover .card-text {
   transition: all 0.3s ease;
   opacity: 1;
   max-height: 40px;
 }
-a{
+a {
   text-decoration: none;
 }
