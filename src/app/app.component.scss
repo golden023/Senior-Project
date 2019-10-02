@@ -43,21 +43,33 @@ h5 {
 .row {
   margin: auto;
 }
-.input-group {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+.col-md-6 {
+  background: maroon;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 10px;
 }
 .col-md-6 h5 {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-button {
-  background-color: maroon;
+  font-size: 24px;
   color: white;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
-button:hover {
-  background-color: rgba(128, 0, 0, 0.8);
-  color: white;
+.col-md-6 .form-control {
+  height: 50px;
+  background: rgba(255, 255, 255, 0.6);
+  border-color: transparent;
+  border-radius: 20px 0 0 20px;
+  width: 10%;
+}
+.col-md-6.form-control:focus {
+  box-shadow: none;
+  border-color: #243c4f;
+}
+.col-md-6 .btn {
+  min-height: 50px;
+  border-radius: 0 20px 20px 0;
+  background: #243c4f;
+  color: #fff;
 }
