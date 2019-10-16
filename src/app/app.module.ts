@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { UserhomeComponent } from './userhome/userhome.component';
+import { MyAccountComponent } from './my-account/my-account.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { UserhomeComponent } from './userhome/userhome.component';
     LoginComponent,
     RegisterComponent,
     AlertComponent,
-    UserhomeComponent
+    UserhomeComponent,
+    MyAccountComponent
   ],
   imports: [
     BrowserModule,
