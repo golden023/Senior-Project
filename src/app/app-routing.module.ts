@@ -1,13 +1,12 @@
-import {Component, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AllComponent } from './all/all.component';
 import { EventComponent } from './event/event.component';
 import { GiftComponent } from './gift/gift.component';
 import { SaleComponent } from './sale/sale.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { UserhomeComponent } from './userhome';
+import { MyAccountComponent } from './my-account/my-account.component'
 
 
 const routes: Routes = [
@@ -17,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'all',
-    component:  AllComponent
+    component: AllComponent
   },
   {
     path: 'event',
@@ -32,12 +31,8 @@ const routes: Routes = [
     component: SaleComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
+    path: 'my-account',
+    component: MyAccountComponent
   },
   {
     path: 'userHome',
