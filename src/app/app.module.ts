@@ -19,7 +19,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
+<<<<<<< HEAD
 import { AddProductComponent } from './add-product/add-product.component';
+=======
+import { MyAccountComponent } from './my-account/my-account.component';
+>>>>>>> 355f60afb9638f515b15898441aa1c9a95928b56
 
 
 @NgModule({
@@ -42,7 +46,19 @@ import { AddProductComponent } from './add-product/add-product.component';
     RegisterComponent,
     AlertComponent,
     UserhomeComponent,
+<<<<<<< HEAD
     AddProductComponent
+=======
+    MyAccountComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
+>>>>>>> 355f60afb9638f515b15898441aa1c9a95928b56
   ],
   
   bootstrap: [AppComponent]
