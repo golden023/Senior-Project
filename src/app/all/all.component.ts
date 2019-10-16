@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { KIT } from '../_models/kit';
+import { KitsService } from '../_services';
+
 
 @Component({
   selector: 'app-all',
   templateUrl: './all.component.html',
-  styleUrls: ['./all.component.scss']
+  styleUrls: ['./all.component.scss'],
+  providers: [KitsService]
 })
+
 export class AllComponent implements OnInit {
+  kits: KIT[];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private service: KitsService) {}
+  ngOnInit(): void {
+    this.getKits();
   }
-
+  getKits(): void {
+    this.service.getAll()
+      .subscribe(kits => {
+        return (this.kits = kits);
+      });
+  } 
 }

@@ -1,0 +1,67 @@
+[
+    {
+        "KitID": 111,
+        "KitName": "Baby Shower Gift Basket (Delux)",
+        "Price": 75
+    },
+    {
+        "KitID": 103,
+        "KitName": "Bar-be-cue",
+        "Price": 35
+    },
+    {
+        "KitID": 101,
+        "KitName": "Picnic for 2 (delux)",
+        "Price": 75
+    },
+    {
+        "KitID": 102,
+        "KitName": "Beach Day for 4",
+        "Price": 75
+    },
+    {
+        "KitID": 106,
+        "KitName": "Camping Trip for 4",
+        "Price": 150
+    },
+    {
+        "KitID": 104,
+        "KitName": "Easter Egg Hunt",
+        "Price": 30
+    },
+    {
+        "KitID": 110,
+        "KitName": "Baby Shower Gift Basket",
+        "Price": 50
+    },
+    {
+        "KitID": 109,
+        "KitName": "Newly Wed Gift Basket",
+        "Price": 30
+    },
+    {
+        "KitID": 112,
+        "KitName": "Spa Day Gift Basket",
+        "Price": 25
+    },
+    {
+        "KitID": 108,
+        "KitName": "Tailgate",
+        "Price": 40
+    },
+    {
+        "KitID": 100,
+        "KitName": "Picnic for 2",
+        "Price": 50
+    },
+    {
+        "KitID": 107,
+        "KitName": "Disaster for 2",
+        "Price": 125
+    },
+    {
+        "KitID": 105,
+        "KitName": "Birthday Party for 24",
+        "Price": 30
+    }
+]
