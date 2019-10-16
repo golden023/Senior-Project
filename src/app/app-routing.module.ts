@@ -5,8 +5,7 @@ import { AllComponent } from './all/all.component';
 import { EventComponent } from './event/event.component';
 import { GiftComponent } from './gift/gift.component';
 import { SaleComponent } from './sale/sale.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { MyAccountComponent } from './myaccount/myaccount.component';
 import { UserhomeComponent } from './userhome';
 
 
@@ -32,12 +31,8 @@ const routes: Routes = [
     component: SaleComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
+    path: 'myaccount',
+    component: MyAccountComponent
   },
   {
     path: 'userHome',
