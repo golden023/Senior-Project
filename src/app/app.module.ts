@@ -46,14 +46,6 @@ import { MyAccountComponent } from './my-account/my-account.component';
     AddProductComponent,
     MyAccountComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    NgbModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
   
   bootstrap: [AppComponent]
 })
