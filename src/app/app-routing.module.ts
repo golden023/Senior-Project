@@ -6,11 +6,8 @@ import { EventComponent } from './event/event.component';
 import { GiftComponent } from './gift/gift.component';
 import { SaleComponent } from './sale/sale.component';
 import { UserhomeComponent } from './userhome';
-<<<<<<< HEAD
 import { AddProductComponent } from './add-product/add-product.component';
-=======
 import { MyAccountComponent } from './my-account/my-account.component'
->>>>>>> 355f60afb9638f515b15898441aa1c9a95928b56
 
 
 const routes: Routes = [
