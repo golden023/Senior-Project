@@ -7,7 +7,7 @@ import { GiftComponent } from './gift/gift.component';
 import { SaleComponent } from './sale/sale.component';
 import { UserhomeComponent } from './userhome';
 import { AddProductComponent } from './add-product/add-product.component';
-import { MyAccountComponent } from './my-account/my-account.component'
+import { LoginComponent } from './login/login.component'
 
 
 const routes: Routes = [
@@ -32,8 +32,8 @@ const routes: Routes = [
     component: SaleComponent
   },
   {
-    path: 'my-account',
-    component: MyAccountComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'userHome',

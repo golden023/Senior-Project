@@ -20,7 +20,6 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import { MyAccountComponent } from './my-account/my-account.component';
 
 
 @NgModule({
@@ -44,7 +43,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
     AlertComponent,
     UserhomeComponent,
     AddProductComponent,
-    MyAccountComponent
+    LoginComponent
   ],
   
   bootstrap: [AppComponent]
