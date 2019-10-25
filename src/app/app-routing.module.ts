@@ -6,7 +6,6 @@ import { EventComponent } from './event/event.component';
 import { GiftComponent } from './gift/gift.component';
 import { SaleComponent } from './sale/sale.component';
 import { UserhomeComponent } from './userhome';
-import { MyAccountComponent } from './my-account/my-account.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 
 
@@ -30,10 +29,6 @@ const routes: Routes = [
   {
     path: 'sale',
     component: SaleComponent
-  },
-  {
-    path: 'my-account',
-    component: MyAccountComponent
   },
   {
     path: 'userHome',

@@ -41,7 +41,6 @@ import { KitPageComponent } from './kit-page/kit-page.component';
     LoginComponent,
     AlertComponent,
     UserhomeComponent,
-    MyAccountComponent,
     KitPageComponent
   ],
   
