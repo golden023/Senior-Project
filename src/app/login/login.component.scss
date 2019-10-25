@@ -1,12 +1,12 @@
-h1 {
-    text-align: center;
-    margin: auto;
-    font-size: 4em;
+.row h1 {
+    text-align: center !important;
+    margin: auto !important;
+    font-size: 4em !important;
   }
   h3 {
-    letter-spacing: 2px;
-    font-size: medium;
-    color: maroon;
+    letter-spacing: 2px !important;
+    font-size: medium !important;
+    color: maroon !important;
   }
   .row {
     width: fit-content;
