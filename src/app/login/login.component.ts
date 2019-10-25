@@ -1,30 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService } from '../_services';
 
-@Component({templateUrl: 'login.component.html'})
+@Component({
+  selector: 'ngbd-modal-options',
+  templateUrl: 'login.component.html',
+  encapsulation: ViewEncapsulation.None,
+})
+
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
+  closeResult: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private modalService: NgbModal
   ) {
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/userHome']);
     }
   }
-
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
+  }
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -54,7 +63,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.alertService.error('Bad Login and/or Password');
+          this.alertService.error('Invalid email and/or password. Please try again.');
           this.loading = false;
         });
   }
