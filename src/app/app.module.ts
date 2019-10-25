@@ -18,9 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
-import { MyAccountComponent } from './my-account/my-account.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
-
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   imports: [
