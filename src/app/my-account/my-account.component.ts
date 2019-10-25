@@ -29,6 +29,7 @@ export class MyAccountComponent implements OnInit {
       this.router.navigate(['/userHome']);
     }
   }
+  
 
   ngOnInit() {
     //login validation
@@ -51,7 +52,6 @@ export class MyAccountComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
   get r() { return this.registerForm.controls; }
-
 
   onSubmit() {
     this.submitted = true;
