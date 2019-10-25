@@ -21,6 +21,21 @@ export class KitsService {
       .pipe();
   }
 
+  getEventKits (): Observable<KIT[]>  {
+    return this.http.get<KIT[]>('http://localhost:5000/api/ekits')
+      .pipe();
+  }
+
+  getSaleKits (): Observable<KIT[]>  {
+    return this.http.get<KIT[]>('http://localhost:5000/api/skits')
+      .pipe();
+  }
+
+  getTopKits (): Observable<KIT[]>  {
+    return this.http.get<KIT[]>('http://localhost:5000/api/tkits')
+      .pipe();
+  }
+
   newKit(kit: Kit) {
     return this.http.post(`http://localhost:5000/api/newKit`, kit);
   }

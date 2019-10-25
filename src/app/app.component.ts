@@ -10,6 +10,7 @@ import { User } from './_models';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
 
   constructor(
     private router: Router,
@@ -26,3 +27,4 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
 }
+

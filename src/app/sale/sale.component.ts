@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { KIT } from '../_models/kit';
+import { KitsService } from '../_services';
+
 
 @Component({
-  selector: 'app-sale',
+  selector: 'app-event',
   templateUrl: './sale.component.html',
   styleUrls: ['./sale.component.scss']
 })
 export class SaleComponent implements OnInit {
+  skits: KIT[];
 
-  constructor() { }
+  constructor(private service: KitsService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getKits();
   }
-
-}
+  getKits(): void {
+    this.service.getSaleKits()
+      .subscribe(skits => {
+        return (this.skits = skits);
+      });
+  };
+} 

@@ -42,42 +42,12 @@
 </div>
 <h3>Top Kits</h3>
 <div class="row">
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-3 col-sm-6" *ngFor="let kit of tkits">
         <div class="thumbnail">
             <a href="../gift/gift.component.html">
-                <img src="../assets/placeholder.png" alt="Nature" style="width:100%">
+                <img src="{{kit.Image}}" alt="Nature" style="width:100%">
                 <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-        <div class="thumbnail">
-            <a href="../event/event.component.html">
-                <img src="../assets/placeholder.png" alt="Nature" style="width:100%">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-        <div class="thumbnail">
-            <a href="../all/all.component.html">
-                <img src="../assets/placeholder.png" alt="Nature" style="width:100%">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-        <div class="thumbnail">
-            <a href="../event/event.component.html">
-                <img src="../assets/placeholder.png" alt="Nature" style="width:100%">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    <p>{{kit.KitName}}</p>
                 </div>
             </a>
         </div>
