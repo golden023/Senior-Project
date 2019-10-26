@@ -6,9 +6,8 @@ import { EventComponent } from './event/event.component';
 import { GiftComponent } from './gift/gift.component';
 import { SaleComponent } from './sale/sale.component';
 import { UserhomeComponent } from './userhome';
-import { AddProductComponent } from './add-product/add-product.component';
-import { LoginComponent } from './login/login.component'
-import { RegisterComponent } from './register/register.component'
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 
 const routes: Routes = [
@@ -39,10 +38,6 @@ const routes: Routes = [
   {
     path: 'userHome',
     component: UserhomeComponent
-  },
-  {
-    path: 'add-product',
-    component: AddProductComponent
   },
   {
     path: 'register',
