@@ -36,7 +36,6 @@ import { KitPageComponent } from './kit-page/kit-page.component';
     RegisterComponent,
     AlertComponent,
     UserhomeComponent,
-    LoginComponent,
     KitPageComponent
   ],
 
