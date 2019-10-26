@@ -1,31 +1,59 @@
-<p>Kits on Sale</p>
-<div class="col-md-9">
-    <div class="row">
-        <div class="col-md-3 col-sm-6" *ngFor="let kit of skits">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="pic-1" src="{{kit.Image}}">
-                        <img class="pic-2" src="{{kit.Image}}">
-                    </a>
-                    <ul class="social">
-                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i><img class="quick-view"
-                                    src="../assets/quick-view.png"></a></li>
-                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i><img
-                                    class="quick-view" src="../assets/wishlist.png"></a></li>
-                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i><img
-                                    class="quick-view" src="../assets/cart.png"></a></li>
-                    </ul>
-                    <span class="product-new-label">{{kit.NewFlag}}</span>
-                    <span class="product-discount-label">-{{kit.Discount | percent}}</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">{{kit.KitName}}</a></h3>
-                    <div class="price">
-                        {{kit.PriceDis | currency }}
-                        <span>{{kit.Price | currency }}</span>
+<div class="row">
+    <h3>KITS ON SALE</h3>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <form name="filters">
+            <h1>Sort by</h1>
+            <input type="radio" name="sort" value="Popular"> Popular<br>
+            <input type="radio" name="sort" value="New"> New<br>
+            <input type="radio" name="sort" value="Top"> Top Rated<br>
+            <input type="radio" name="sort" value="asc"> Item Name (A-Z)<br>
+            <input type="radio" name="sort" value="desc"> Item Name(Z-A)<br>
+            <input type="radio" name="sort" value="price-up"> Price (Low - High)<br>
+            <input type="radio" name="sort" value="price-down"> Price (High - Low)<br>
+            <h1>Filter by</h1>
+            <h3>Special Offers</h3>
+            <input type="radio" name="special" value="new"> New<br>
+            <input type="radio" name="special" value="sale"> Sale<br>
+            <h3>Price</h3>
+            <input type="radio" name="price" value="$"> $10 - $20<br>
+            <input type="radio" name="price" value="$$"> $20 - $50<br>
+            <input type="radio" name="price" value="$$$"> $50 - $100<br>
+
+            <input type="submit" value="Clear">
+            <input type="submit" value="Submit">
+        </form>
+        <h1>Filter by</h1>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" *ngFor="let kit of skits">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="{{kit.Image}}">
+                            <img class="pic-2" src="{{kit.Image}}">
+                        </a>
+                        <ul class="social">
+                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i><img class="quick-view"
+                                        src="../assets/quick-view.png"></a></li>
+                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i><img
+                                        class="quick-view" src="../assets/wishlist.png"></a></li>
+                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i><img
+                                        class="quick-view" src="../assets/cart.png"></a></li>
+                        </ul>
+                        <span class="product-new-label">{{kit.NewFlag}}</span>
+                        <span class="product-discount-label">-{{kit.Discount | percent}}</span>
                     </div>
-                    <a class="add-to-cart" href="">ADD TO CART</a>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">{{kit.KitName}}</a></h3>
+                        <div class="price">
+                            {{kit.PriceDis | currency }}
+                            <span>{{kit.Price | currency }}</span>
+                        </div>
+                        <a class="add-to-cart" href="">ADD TO CART</a>
+                    </div>
                 </div>
             </div>
         </div>
