@@ -9,7 +9,7 @@ import { UserhomeComponent } from './userhome';
 import { AddProductComponent } from './add-product/add-product.component';
 import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
-
+import { KitPageComponent } from './kit-page/kit-page.component';
 
 const routes: Routes = [
   {
@@ -47,6 +47,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'kitPage/:KitID',
+    component: KitPageComponent
   },
   {
     path: '',
