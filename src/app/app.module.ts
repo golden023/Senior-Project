@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { AccordionModule } from '@syncfusion/ej2-angular-navigations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SaleComponent } from './sale/sale.component';
@@ -15,6 +16,9 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
+import { FaqComponent } from './faq/faq.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+
 
 @NgModule({
   imports: [
@@ -23,7 +27,8 @@ import { KitPageComponent } from './kit-page/kit-page.component';
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AccordionModule
   ],
   declarations: [
     AppComponent,
@@ -36,7 +41,9 @@ import { KitPageComponent } from './kit-page/kit-page.component';
     RegisterComponent,
     AlertComponent,
     UserhomeComponent,
-    KitPageComponent
+    KitPageComponent,
+    AboutusComponent,
+    FaqComponent
   ],
 
   bootstrap: [AppComponent]
