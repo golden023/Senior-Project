@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 const routes: Routes = [
