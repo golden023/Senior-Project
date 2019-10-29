@@ -8,6 +8,7 @@ import { SaleComponent } from './sale/sale.component';
 import { UserhomeComponent } from './userhome';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
   },
   {
     path: 'kitPage/:KitID',
