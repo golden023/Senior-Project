@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { KitPageComponent } from './kit-page/kit-page.component';
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule
   ],
   declarations: [
     AppComponent,
