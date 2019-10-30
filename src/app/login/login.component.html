@@ -2,7 +2,7 @@
   <h1>MY ACCOUNT</h1>
 </div>
 <div class="row">
-  <div class="col-lg-5 col-sm-12">
+  <div class="col-lg-7 col-sm-12">
     <h3>RETURNING CUSTOMER</h3>
     <div class="login">
       <alert></alert>
@@ -32,13 +32,15 @@
       <a class="forgot" (click)="openVerticallyCentered(content)">Forgot Password?</a>
     </div>
   </div>
-  <div class="col-lg-7 col-sm-12">
+  <div class="col-lg-5 col-sm-12">
     <h3>CREATE AN ACCOUNT</h3>
     <p>Create an account to take advantage of faster and easier shopping.</p>
-    <a routerLink="/Register" class="btn btn-link"><button>Register</button></a>
+    <a routerLink="/Register" ><button class="btn btn-primary">Register</button></a>
   </div>
 </div>
-
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
 
 <!-- try to find better way to do this later-->
 <ng-template #content let-modal>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { AlertService, AuthenticationService } from '../_services';
 @Component({
   selector: 'ngbd-modal-options',
   templateUrl: 'login.component.html',
-  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./login.component.scss']
 })
 
 export class LoginComponent implements OnInit {
