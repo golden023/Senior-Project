@@ -9,6 +9,7 @@ import { AlertService, AuthenticationService } from '../_services';
   selector: 'ngbd-modal-options',
   templateUrl: 'login.component.html',
   encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./login.component.scss']
 })
 
 export class LoginComponent implements OnInit {
