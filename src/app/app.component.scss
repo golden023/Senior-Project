@@ -73,3 +73,33 @@ h5 {
   background: #243c4f;
   color: #fff;
 }
+/*bottom nav bar*/
+nav {
+  height: 70px;
+  display: flex;
+  width: 98.55%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+a{
+  letter-spacing: 3px;
+  color: black;
+  vertical-align: middle;
+  font-size: small;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 4em;
+}
+nav a:hover {
+  text-decoration: none;
+  color: maroon;
+}
+.black{
+  height: 20px;
+  display: flex;
+  width: 98.55%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}

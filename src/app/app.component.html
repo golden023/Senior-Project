@@ -1,4 +1,4 @@
-<div class="siteLogo" role="banner">
+<!--<div class="siteLogo" role="banner">
   <a href="http://localhost:4200/" title="home">
     <img width="500" alt="Site Logo" src="../assets/tempLogo.png" />
   </a>
@@ -10,7 +10,52 @@
   <a routerLink="/gift" routerLinkActive="active-link">Gift Baskets</a>
   <a routerLink="/sale" routerLinkActive="active-link">Sale Kits</a>
   <a routerLink="/login" routerLinkActive="active-link">My Account</a>
+</nav>-->
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+  <a routerLink="/home" routerLinkActive="active-link"><img width="250" alt="Site Logo"
+      src="../assets/tempLogo.png" /></a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="/all" routerLinkActive="active-link">All Kits</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/event" routerLinkActive="active-link">Event Kits</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/gift" routerLinkActive="active-link">Gift Baskets</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/sale" routerLinkActive="active-link">Sale Kits</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <i class="fas fa-user"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="#">Login</a>
+          <a class="dropdown-item" href="#">Register</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fab fa-twitter">Favorites</i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fab fa-google-plus-g">Shopping Bag</i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
+<!--/.Navbar -->
+<div class="black"></div>
 <div>
   <router-outlet></router-outlet>
 </div>
