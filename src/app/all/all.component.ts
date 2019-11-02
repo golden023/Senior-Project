@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { KIT } from '../_models/kit';
 import { KitsService } from '../_services';
-
+import { CartService } from '../_services/cart.service'
 
 @Component({
   selector: 'app-all',
@@ -13,7 +13,10 @@ import { KitsService } from '../_services';
 export class AllComponent implements OnInit {
   kits: KIT[];
 
-  constructor(private service: KitsService) {}
+  constructor(
+    private service: KitsService,
+    private cartService: CartService
+    ) {}
   ngOnInit(): void {
     this.getKits();
   }
@@ -23,4 +26,8 @@ export class AllComponent implements OnInit {
         return (this.kits = kits);
       });
   } 
+  addToCart(KIT) {
+    window.alert('Your kit has been added to the cart!');
+    this.cartService.addToCart(KIT);
+  }
 }

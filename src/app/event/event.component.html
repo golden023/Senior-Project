@@ -52,7 +52,7 @@
                             {{kit.PriceDis | currency }}
                             <span>{{kit.Price | currency }}</span>
                         </div>
-                        <a class="add-to-cart" href="">ADD TO CART</a>
+                        <button class="add-to-cart" (click)="addToCart(kit)">Add to Cart</button>
                     </div>
                 </div>
             </div>

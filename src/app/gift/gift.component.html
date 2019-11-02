@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-3 col-sm-6" *ngFor="let kit of gkits">
+                <div class="col-md-3 col-sm-6" *ngFor="let kit of kits">
                     <div class="product-grid">
                         <div class="product-image">
                             <a href="#">
@@ -52,7 +52,7 @@
                                 {{kit.PriceDis | currency }}
                                 <span>{{kit.Price | currency }}</span>
                             </div>
-                            <a class="add-to-cart" href="">ADD TO CART</a>
+                            <button class="add-to-cart" (click)="addToCart(kit)">Add to Cart</button>
                         </div>
                     </div>
                 </div>

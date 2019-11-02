@@ -9,6 +9,7 @@ import { UserhomeComponent } from './userhome';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   }
 ];
 

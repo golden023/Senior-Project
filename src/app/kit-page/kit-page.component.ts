@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { KitsService } from '../_services';
 import { KIT } from '../_models/kit';
+import { CartService } from '../_services/cart.service';
 
 @Component({
   selector: 'app-kit-page',
@@ -16,7 +17,8 @@ export class KitPageComponent implements OnInit {
 
   constructor(
     private route:ActivatedRoute,
-    private service:KitsService
+    private service:KitsService,
+    private cartService: CartService
     ) { }
 
   ngOnInit(): void {
@@ -33,5 +35,10 @@ export class KitPageComponent implements OnInit {
         return (this.lkit = lkit);
       });
   };
+
+  addToCart(KIT) {
+    window.alert('Your kit has been added to the cart!');
+    this.cartService.addToCart(KIT);
+  }
 
 }

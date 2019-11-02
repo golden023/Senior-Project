@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { KitPageComponent } from './kit-page/kit-page.component';
     RegisterComponent,
     AlertComponent,
     UserhomeComponent,
-    KitPageComponent
+    KitPageComponent,
+    CartComponent
   ],
 
   bootstrap: [AppComponent]

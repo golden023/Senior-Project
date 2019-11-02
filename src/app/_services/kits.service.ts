@@ -34,6 +34,11 @@ export class KitsService {
       .pipe();
   }
 
+  getGiftKits (): Observable<KIT[]>  {
+    return this.http.get<KIT[]>('http://localhost:5000/api/ekits')
+      .pipe();
+  }
+
   getSaleKits (): Observable<KIT[]>  {
     return this.http.get<KIT[]>('http://localhost:5000/api/skits')
       .pipe();
