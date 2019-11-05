@@ -18,7 +18,12 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 import { FaqComponent } from './faq/faq.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-
+import { CartComponent } from './cart/cart.component';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
 
 @NgModule({
   imports: [
@@ -28,7 +33,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AccordionModule
+    AccordionModule,
+    RecaptchaModule,
+    FontAwesomeModule
   ],
   declarations: [
     AppComponent,
@@ -43,7 +50,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     UserhomeComponent,
     KitPageComponent,
     AboutusComponent,
-    FaqComponent
+    FaqComponent,
+    CartComponent
   ],
 
   bootstrap: [AppComponent]

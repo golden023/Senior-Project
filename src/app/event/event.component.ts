@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { KIT } from '../_models/kit';
 import { KitsService } from '../_services';
-
+import { CartService } from '../_services/cart.service';
 
 @Component({
   selector: 'app-event',
@@ -12,7 +12,10 @@ import { KitsService } from '../_services';
 export class EventComponent implements OnInit {
   ekits: KIT[];
 
-  constructor(private service: KitsService) { }
+  constructor(
+    private service: KitsService,
+    private cartService: CartService
+    ) { }
 
   ngOnInit(): void {
     this.getKits();
@@ -23,4 +26,8 @@ export class EventComponent implements OnInit {
         return (this.ekits = ekits);
       });
   };
+  addToCart(KIT) {
+    window.alert('Your kit has been added to the cart!');
+    this.cartService.addToCart(KIT);
+  }
 } 

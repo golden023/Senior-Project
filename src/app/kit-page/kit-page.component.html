@@ -9,6 +9,6 @@
                 <p>{{kit.KitName}}</p>
             </div>
         </a>
-        <button [routerLink]="['/kitPage',kit.KitID]">{{ kit.KitName }} Kit Page </button>
     </div>
+    <button (click)="addToCart(kit)">Add to Cart</button>
 </div>
