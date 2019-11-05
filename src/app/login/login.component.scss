@@ -1,37 +1,56 @@
-.row h1 {
-    text-align: center !important;
-    margin: auto !important;
-    font-size: 4em !important;
-  }
-  h3 {
-    letter-spacing: 2px !important;
-    font-size: medium !important;
-    color: maroon !important;
-  }
-  .row {
-    width: fit-content;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 1%;
-  }
-  label {
-    margin-left: 1%;
-    font-size: small;
-  }
-  button{
-      background-color: maroon;
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      font-size: large;
-      height: 40px;
-      border: none;
-  }
-  button:hover{
-      opacity: 0.9;
-      background-color: maroon;
-  }
-  .forgot {
-      text-align: right;
-  }
+h1 {
+  text-align: center;
+  margin: auto;
+  font-size: 4em;
+}
+h3 {
+  letter-spacing: 2px;
+  font-size: medium;
+  color: maroon;
+}
+.row {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1%;
+}
+label {
+  margin-left: 1%;
+  font-size: small;
+}
+.btn.btn-primary {
+  background-color: maroon;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-size: large;
+  height: 40px;
+  border: none;
+  color: white;
+  width: 70%;
+}
+.btn.btn-primary:hover {
+  opacity: 0.9;
+  background-color: maroon;
+}
+.forgot {
+  float: right;
+  padding-right: 20%;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+.form-group {
+  width: 80%;
+}
+button{
+  background-color: maroon;
+  color: white;
+}
+.pl-3{
+  float: right;
+}
+.form-control{
+  border-color: black;
+}

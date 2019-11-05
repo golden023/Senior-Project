@@ -16,6 +16,11 @@ import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 import { CartComponent } from './cart/cart.component';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
 
 @NgModule({
   imports: [
@@ -24,7 +29,9 @@ import { CartComponent } from './cart/cart.component';
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule,
+    FontAwesomeModule
   ],
   declarations: [
     AppComponent,
