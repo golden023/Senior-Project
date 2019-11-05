@@ -16,6 +16,10 @@ import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
 
 @NgModule({
   imports: [
@@ -25,7 +29,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RecaptchaModule
+    RecaptchaModule,
+    FontAwesomeModule
   ],
   declarations: [
     AppComponent,
