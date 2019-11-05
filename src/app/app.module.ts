@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
+import { CartComponent } from './cart/cart.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -43,7 +44,8 @@ library.add(fas);
     RegisterComponent,
     AlertComponent,
     UserhomeComponent,
-    KitPageComponent
+    KitPageComponent,
+    CartComponent
   ],
 
   bootstrap: [AppComponent]
