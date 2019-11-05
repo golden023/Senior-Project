@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { AccordionModule } from '@syncfusion/ej2-angular-navigations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SaleComponent } from './sale/sale.component';
@@ -15,6 +16,8 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
+import { FaqComponent } from './faq/faq.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 import { CartComponent } from './cart/cart.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -30,6 +33,7 @@ library.add(fas);
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AccordionModule,
     RecaptchaModule,
     FontAwesomeModule
   ],
@@ -45,6 +49,8 @@ library.add(fas);
     AlertComponent,
     UserhomeComponent,
     KitPageComponent,
+    AboutusComponent,
+    FaqComponent,
     CartComponent
   ],
 
