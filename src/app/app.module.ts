@@ -35,7 +35,8 @@ library.add(fas);
     HttpClientModule,
     AccordionModule,
     RecaptchaModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AccordionModule
   ],
   declarations: [
     AppComponent,
