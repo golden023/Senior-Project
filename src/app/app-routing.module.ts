@@ -54,7 +54,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'cart',
+    path: 'cart/:Name',
     component: CartComponent
   }
 ];

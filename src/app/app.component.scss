@@ -30,6 +30,21 @@
   font-size: 1.35em;
   text-decoration: none;
 }
+.menu button {
+  letter-spacing: 3px;
+  color: white;
+  vertical-align: middle;
+  font-size: 1.1em;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 4em;
+  border: none;
+}
+ .menu button:hover {
+  font-size: 1.35em;
+  text-decoration: none;
+}
+
 .grand-opening {
   height: 3em;
 }

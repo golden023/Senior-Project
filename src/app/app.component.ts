@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { AuthenticationService } from './_services';
-import { User } from './_models';
+import { AuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +7,26 @@ import { User } from './_models';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+  title = "Senior Project";
+  user: SocialUser;
+  loggedIn: boolean;
 
-  constructor(
-    private router: Router,
-    private authenticationService: AuthenticationService
-  ) {
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit() {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
-  currentUser: User;
 
-  title = 'senior-project';
+  signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
 
-  logout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/login']);
+  signOut(): void {
+    this.authService.signOut();
   }
 }
 

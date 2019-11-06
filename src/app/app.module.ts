@@ -16,6 +16,18 @@ import { AlertComponent } from './_components/alert.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 import { CartComponent } from './cart/cart.component';
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
+
+// Client id for the google oauth. This is used for validation of our application to google.
+// https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin
+const google_oauth_client_id:string = '777995319371-38ab2l210vqro271jrmbn7ilrsh6f0qc.apps.googleusercontent.com';
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider(google_oauth_client_id)
+  }
+]);
+
 
 @NgModule({
   imports: [
@@ -24,7 +36,9 @@ import { CartComponent } from './cart/cart.component';
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule.initialize(config)
+    
   ],
   declarations: [
     AppComponent,
@@ -43,4 +57,5 @@ import { CartComponent } from './cart/cart.component';
 
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

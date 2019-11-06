@@ -20,32 +20,31 @@ import { KIT, Kit } from '../_models/kit';
 })
 
 export class KitsService {
-  kitsURL = 'http://localhost:5000/api/kits';
   
   constructor(private http: HttpClient){}
 
   getAll (): Observable<KIT[]>  {
-    return this.http.get<KIT[]>(this.kitsURL)
+    return this.http.get<KIT[]>('http://localhost:5000/kits')
       .pipe();
   }
 
   getEventKits (): Observable<KIT[]>  {
-    return this.http.get<KIT[]>('http://localhost:5000/api/ekits')
+    return this.http.get<KIT[]>('http://localhost:5000/eventkits')
       .pipe();
   }
 
   getGiftKits (): Observable<KIT[]>  {
-    return this.http.get<KIT[]>('http://localhost:5000/api/ekits')
+    return this.http.get<KIT[]>('http://localhost:5000/giftkits')
       .pipe();
   }
 
   getSaleKits (): Observable<KIT[]>  {
-    return this.http.get<KIT[]>('http://localhost:5000/api/skits')
+    return this.http.get<KIT[]>('http://localhost:5000/salekits')
       .pipe();
   }
 
   getTopKits (): Observable<KIT[]>  {
-    return this.http.get<KIT[]>('http://localhost:5000/api/tkits')
+    return this.http.get<KIT[]>('http://localhost:5000/topkits')
       .pipe();
   }
 
@@ -53,12 +52,9 @@ export class KitsService {
     const options = kitID ?
       { params: new HttpParams().set('kitID', kitID) } : {};
 
-    return this.http.get<KIT[]>(`http://localhost:5000/api/lkit`, options)
+    return this.http.get<KIT[]>(`http://localhost:5000/singlekit`, options)
       .pipe();
   }
-
-  newKit(kit: Kit) {
-    return this.http.post(`http://localhost:5000/api/newKit`, kit);
-  }
+  
 }
 

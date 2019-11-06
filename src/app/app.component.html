@@ -1,3 +1,4 @@
+<div class="container">
 <div class="siteLogo" role="banner">
   <a href="http://localhost:4200/" title="home">
     <img width="500" alt="Site Logo" src="../assets/tempLogo.png" />
@@ -10,8 +11,10 @@
   <a routerLink="/gift" routerLinkActive="active-link">Gift Baskets</a>
   <a routerLink="/sale" routerLinkActive="active-link">Sale Kits</a>
   <a routerLink="/login" routerLinkActive="active-link">My Account</a>
-  <a [routerLink]="['/cart']" class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>
+  <button class="btn btn-social-icon" (click)="signInWithGoogle()">Sign in</button>
 </nav>
+<a [routerLink]="['/cart',user.name]" class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>
+<div>{{user.name}}</div>
 <div>
   <router-outlet></router-outlet>
 </div>
@@ -61,3 +64,4 @@
   <div class="footer-copyright text-center py-3">Copyright © 2019
   </div>
 </footer>
+</div>

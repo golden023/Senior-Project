@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { KitsService } from '../_services';
 import { KIT } from '../_models/kit';
 import { CartService } from '../_services/cart.service';
+import { AuthService, GoogleLoginProvider } from 'angularx-social-login';
 
 @Component({
   selector: 'app-kit-page',
