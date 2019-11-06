@@ -4,28 +4,8 @@
   margin-left: auto;
   margin-top: 1%;
 }
-h1 {
-  text-align: center;
-  margin: auto;
-  font-size: 4em;
-}
 p {
   text-align: center;
-}
-.btn.btn-primary {
-  background-color: maroon;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  font-size: large;
-  height: 40px;
-  border: none;
-  color: white;
-  width: 20%;
-}
-.btn.btn-primary:hover {
-  opacity: 0.9;
-  background-color: maroon;
 }
 label {
   margin-left: 25%;

@@ -1,12 +1,10 @@
-h1 {
+/*h1 {
   text-align: center;
   margin: auto;
   font-size: 4em;
-}
+}*/
 h3 {
-  letter-spacing: 2px;
-  font-size: medium;
-  color: maroon;
+  text-align: left;
 }
 .row {
   width: 60%;
@@ -38,19 +36,12 @@ label {
   padding-right: 20%;
   cursor: pointer;
 }
-a {
-  text-decoration: none;
-}
 .form-group {
   width: 80%;
 }
-button{
-  background-color: maroon;
-  color: white;
-}
-.pl-3{
+.pl-3 {
   float: right;
 }
-.form-control{
+.form-control {
   border-color: black;
 }
