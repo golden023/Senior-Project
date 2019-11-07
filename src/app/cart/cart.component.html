@@ -1,8 +1,29 @@
-<div class="page">
-  <h3>Cart</h3>
-
-  <div class="cart-item" *ngFor="let item of lkit">
-    <span>{{ item.KitName }}</span>
-    <span>{{ item.Price | currency }}</span>
+<div class="container">
+    <div class="cart row">Cart</div>
+    <div class="item row" *ngFor="let item of lkit">
+        <div class="col-md-6 text-left">
+            <span>{{ item.KitName }}</span>
+        </div>
+        <div class="col-md-6 text-right">
+            <span>{{ item.Price | currency }}</span>
+        </div> 
+    </div>
+    <div>{{name}}</div>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" class="form-group">
+      <div>
+        <label for="name">
+          Name
+        </label>
+        <input id="name" type="text" formControlName="name" class="form-control"> 
+        </div>
+        
+        <div>
+          <label for="address">
+            Address
+          </label>
+          <input id="address" type="text" formControlName="address" class="form-control">
+        </div>
+        
+        <button class="button" type="submit">Purchase</button>
+    </form>
   </div>
-</div>
