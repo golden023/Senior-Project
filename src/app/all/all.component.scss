@@ -2,9 +2,15 @@
   margin: auto;
   width: 98.55%;
 }
-h3 {
+form h3 {
   text-align: left;
   color: black;
   font-size: medium;
   margin-top: 1%;
+}
+input[type="submit"] {
+  background: maroon;
+  color: white;
+  margin-top: 3%;
+  margin-right: 3%;
 }
