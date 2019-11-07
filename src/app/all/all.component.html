@@ -35,8 +35,7 @@
                                 <img src="{{kit.Image}}">
                             </a>
                             <ul class="social">
-                                <li><a [routerLink]="['/kitPage',kit.KitID]" data-tip="Quick View"
-                                        (click)="addToCart(kit)">
+                                <li><a data-toggle="modal" data-target="#product-view">
                                         <fa-icon icon="eye"></fa-icon>
                                     </a></li>
                                 <li><a routerLink="#" data-tip="Add to Wishlist">
@@ -53,6 +52,81 @@
                                 <span>{{kit.Price | currency }}</span>
                             </div>
                             <button (click)="addToCart(kit)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade product_view" id="product-view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" class="class pull-right"><span
+                        class="glyphicon glyphicon-remove"></span></a>
+                <h3 class="modal-title">Kit Name</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img src="{{kit.Image}}" class="img-responsive">
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4>Product Id: <span>{{kitid}}</span></h4>
+                        <div class="rating">
+                            <span>
+                                <fa-icon icon="star"></fa-icon>
+                            </span>
+                            <span>
+                                <fa-icon icon="star"></fa-icon>
+                            </span>
+                            <span>
+                                <fa-icon icon="star"></fa-icon>
+                            </span>
+                            <span>
+                                <fa-icon icon="star"></fa-icon>
+                            </span>
+                            <span>
+                                <fa-icon icon="star"></fa-icon>
+                            </span>
+                            (10 reviews)
+                        </div>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy
+                            text of the printing and typesetting industry.</p>
+                        <h3 class="cost">{{kit.PriceDis | currency }}
+                            <span>{{kit.Price | currency }}</span></h3>
+                        <div class="row">
+                            <!-- div class="col-md-4 col-sm-6 col-xs-12">
+                                <select class="form-control" name="select">
+                                    <option value="" selected="">Color</option>
+                                    <option value="black">Black</option>
+                                    <option value="white">White</option>
+                                    <option value="gold">Gold</option>
+                                    <option value="rose gold">Rose Gold</option>
+                                </select>
+                            </div> -->
+                            <!-- end col -->
+                            <!-- <div class="col-md-4 col-sm-12">
+                                <select class="form-control" name="select">
+                                    <option value="" selected="">QTY</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div> -->
+                            <!-- end col -->
+                        </div>
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                            <button (click)="addToCart(kit)"><span>
+                                    <fa-icon icon="cart"></fa-icon>
+                                </span>Add to Cart</button>
+                            <button (click)="addToWish(kit)"><span>
+                                    <fa-icon icon="heart"></fa-icon>
+                                </span>Add To Wishlist</button>
                         </div>
                     </div>
                 </div>
