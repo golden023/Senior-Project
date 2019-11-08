@@ -31,15 +31,15 @@
                 <div class="col-md-3 col-sm-6" *ngFor="let kit of kits">
                     <div class="product-grid">
                         <div class="product-image">
-                            <a routerLink="#">
-                                <img src="{{kit.Image}}">
+                            <a class="kit-page" data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
+                                <img src={{kit.Image}}>
                             </a>
                             <ul class="social">
                                 <li><a data-toggle="modal" data-target="#product-view">
-                                        <fa-icon icon="eye"></fa-icon>
+                                        <i class="fas fa-eye"></i>
                                     </a></li>
                                 <li><a routerLink="#" data-tip="Add to Wishlist">
-                                        <fa-icon icon="heart"></fa-icon>
+                                        <i class='fas fa-heart'></i>
                                     </a></li>
                             </ul>
                             <span class="product-new-label">{{kit.NewFlag}}</span>
@@ -70,25 +70,25 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-6 product_img">
-                        <img src="{{kit.Image}}" class="img-responsive">
+                        <img class="mw-100" src= {{this?.openkit?.Image}}>
                     </div>
                     <div class="col-md-6 product_content">
-                        <h4>Product Id: <span>{{kitid}}</span></h4>
+                        <h4>Product Id: <span>{{this?.openkit?.KitID}}</span></h4>
                         <div class="rating">
                             <span>
-                                <fa-icon icon="star"></fa-icon>
+                                <i class='fa fa-icon-star'></i>
                             </span>
                             <span>
-                                <fa-icon icon="star"></fa-icon>
+                                <i class='fa fa-icon-star'></i>
                             </span>
                             <span>
-                                <fa-icon icon="star"></fa-icon>
+                                <i class='fa fa-icon-star'></i>
                             </span>
                             <span>
-                                <fa-icon icon="star"></fa-icon>
+                                <i class='fa fa-icon-star'></i>
                             </span>
                             <span>
-                                <fa-icon icon="star"></fa-icon>
+                                <i class='fa fa-icon-star'></i>
                             </span>
                             (10 reviews)
                         </div>
@@ -96,8 +96,8 @@
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
                             galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy
                             text of the printing and typesetting industry.</p>
-                        <h3 class="cost">{{kit.PriceDis | currency }}
-                            <span>{{kit.Price | currency }}</span></h3>
+                        <h3 class="cost">{{this?.openkit?.PriceDis | currency }}
+                            <span>{{this?.openkit?.Price | currency }}</span></h3>
                         <div class="row">
                             <!-- div class="col-md-4 col-sm-6 col-xs-12">
                                 <select class="form-control" name="select">
@@ -121,11 +121,11 @@
                         </div>
                         <div class="space-ten"></div>
                         <div class="btn-ground">
-                            <button (click)="addToCart(kit)"><span>
-                                    <fa-icon icon="cart"></fa-icon>
+                            <button (click)="addToCart(this?.openkit)"><span>
+                                    <i class='fa fa-icon-cart'></i>
                                 </span>Add to Cart</button>
-                            <button (click)="addToWish(kit)"><span>
-                                    <fa-icon icon="heart"></fa-icon>
+                            <button (click)="addToWish(this?.openkit)"><span>
+                                    <i class='fa fa-icon-heart'></i>
                                 </span>Add To Wishlist</button>
                         </div>
                     </div>
