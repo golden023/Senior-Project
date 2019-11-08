@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../_services/cart.service'
-import { KIT } from '../_models/kit';
+import { CartService } from '../../_services/cart.service'
+import { KIT } from '../../_models/kit';
 import { ActivatedRoute } from '@angular/router';
 
+
 import { FormBuilder } from '@angular/forms';
+import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
+import { ConstantPool } from '@angular/compiler';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: 'app-cart-main',
+  templateUrl: './cart-main.component.html',
+  styleUrls: ['./cart-main.component.css']
+
 })
-export class CartComponent implements OnInit {
+export class CartMainComponent implements OnInit {
   lkit: KIT[];
   checkoutForm;
   name: string;
-  
+  total=0;
+
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder,
@@ -35,6 +40,7 @@ export class CartComponent implements OnInit {
       console.log(params.get('Name'));
       this.name = params.get('Name');
     });
+    this.total = this.getTotal(this.lkit);
   }
 
   onSubmit(customerData) {
@@ -45,4 +51,14 @@ export class CartComponent implements OnInit {
     this.checkoutForm.reset();
   }
 
+  getTotal(lkit){
+    var total = 0;
+    lkit.forEach(function(element: KIT){
+      total = total + Number(element.PriceDis);
+    });
+    return total;
+
+  }
+
 }
+

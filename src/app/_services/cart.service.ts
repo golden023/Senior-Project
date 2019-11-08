@@ -9,9 +9,12 @@ export class CartService {
   addToCart(kit) {
     this.items.push(kit);
   }
+
   getItem() {
     return this.items;
   }
+
+  // Pushes Kit information to Backend
 
   clearCart(){
     this.items = [];

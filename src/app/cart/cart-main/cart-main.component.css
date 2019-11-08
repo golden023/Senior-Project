@@ -3,9 +3,10 @@
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    background-color: black;
-    color: white;
+    background-color: none;
+    color: black;
     margin-top: 25px;
+    font-size: 40px;
   }
 
   .item {
@@ -15,4 +16,8 @@
     margin-right: auto;
     background-color: rgb(216, 216, 216);
     margin-top: 5px;
+  }
+
+  .total {
+    font-size: 20px;
   }

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="cart row">CART</div>
+      <div class="row shadow p-3 mb-5 bg-white rounded" *ngFor="let item of lkit">
+        <app-cart-item-detail [kit]="item"></app-cart-item-detail>
+      </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-4 shadow p-3 mb-5 bg-white rounded mt-5">
+      <div>Order Summary</div>
+      <mat-divider></mat-divider>
+      <div>Subtotal</div>
+      <mat-divider></mat-divider>
+      <div>Taxes</div>
+      <mat-divider></mat-divider>
+      <div>Order Summary</div>
+      <mat-divider></mat-divider>
+        <div class="row">
+          <div class="total col-9 font-weight-bold">Order Total</div>
+          <div class="total col-3 font-weight-bold">{{total | currency}}</div>
+        </div>
+      <mat-divider></mat-divider>
+      <div>Order Summary</div>
+    </div>
+  </div>

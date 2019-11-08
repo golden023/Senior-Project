@@ -18,11 +18,14 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 import { FaqComponent } from './faq/faq.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { CartComponent } from './cart/cart.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { CartMainComponent } from './cart/cart-main/cart-main.component';
+import { CartItemDetailComponent } from './cart/cart-item-detail/cart-item-detail.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 library.add(fas);
 
 @NgModule({
@@ -36,7 +39,9 @@ library.add(fas);
     AccordionModule,
     RecaptchaModule,
     FontAwesomeModule,
-    AccordionModule
+    AccordionModule,
+    MatDividerModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
@@ -52,7 +57,8 @@ library.add(fas);
     KitPageComponent,
     AboutusComponent,
     FaqComponent,
-    CartComponent
+    CartMainComponent,
+    CartItemDetailComponent
   ],
 
   bootstrap: [AppComponent]
