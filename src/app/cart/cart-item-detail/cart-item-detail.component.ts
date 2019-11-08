@@ -8,9 +8,12 @@ import { Kit } from '../../_models/kit';
 })
 export class CartItemDetailComponent implements OnInit {
   @Input() kit: Kit;
+  itemCount: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.itemCount=1;
   }
 
 }
