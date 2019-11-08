@@ -15,8 +15,7 @@ input[type="submit"] {
   margin-right: 3%;
 }
 .product_view .modal-dialog {
-  max-width: 800px;
-  width: 100%;
+  width: 1000px;
 }
 .pre-cost {
   text-decoration: line-through;
@@ -24,4 +23,24 @@ input[type="submit"] {
 }
 .space-ten {
   padding: 10px 0;
+}
+.modal-body img{
+  max-width: 100%;
+}
+.btn-ground button {
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-ground button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-ground:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.modal-body p{
+  font-size: small;
 }
