@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { KIT } from '../_models/kit';
 import { KitsService } from '../_services';
 import { CartService } from '../_services/cart.service'
@@ -12,6 +12,7 @@ import { CartService } from '../_services/cart.service'
 
 export class AllComponent implements OnInit {
   kits: KIT[];
+  openkit: KIT;
 
   constructor(
     private service: KitsService,
@@ -27,7 +28,13 @@ export class AllComponent implements OnInit {
       });
   } 
   addToCart(KIT) {
-    window.alert('Your kit has been added to the cart!');
+    this.cartService.addToCart(KIT);
+  }
+  openKit(KIT): void{
+    console.log("getCart")
+    this.openkit = KIT
+  }
+  addToWish(KIT) {
     this.cartService.addToCart(KIT);
   }
 }
