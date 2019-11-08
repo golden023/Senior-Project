@@ -16,4 +16,10 @@ export class CartItemDetailComponent implements OnInit {
     this.itemCount=1;
   }
 
+  addOne(){
+    this.itemCount = this.itemCount + 1;
+  }
+  subOne(){
+    this.itemCount = this.itemCount - 1;
+  }
 }
