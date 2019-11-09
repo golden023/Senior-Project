@@ -1,15 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { KIT } from '../_models/kit';
+import { KitsService } from '../_services';
+import { CartService } from '../_services/cart.service';
 
 @Component({
   selector: 'app-gift',
   templateUrl: './gift.component.html',
-  styleUrls: ['./gift.component.scss']
+  styleUrls: ['./gift.component.scss'],
+  providers: [KitsService]
 })
 export class GiftComponent implements OnInit {
+  gkits: KIT[];
+  openkit: KIT;
 
-  constructor() { }
+  constructor(
+    private service: KitsService,
+    private cartService: CartService
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getKits();
   }
-
+  getKits(): void {
+    this.service.getGiftKits()
+      .subscribe(gkits => {
+        return (this.gkits = gkits);
+      });
+  };
+  addToCart(KIT) {
+    window.alert('Your kit has been added to the cart!');
+    this.cartService.addToCart(KIT);
+  }
+  openKit(KIT): void {
+    console.log("getCart")
+    this.openkit = KIT
+  }
+  addToWish(KIT) {
+    this.cartService.addToCart(KIT);
+  }
 }

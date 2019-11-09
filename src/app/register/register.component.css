@@ -1,0 +1,25 @@
+.row {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1%;
+}
+p {
+  text-align: center;
+}
+label {
+  margin-left: 25%;
+  font-size: 1em;
+  color: maroon;
+}
+.form-control {
+  border-color: black;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.recaptcha {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}

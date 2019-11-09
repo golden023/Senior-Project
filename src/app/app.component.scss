@@ -1,35 +1,3 @@
-.siteLogo {
-  display: flex;
-  width: 98.55%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.siteLogo a {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.menu {
-  height: 70px;
-  display: flex;
-  width: 98.55%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: black;
-}
-.menu a {
-  letter-spacing: 3px;
-  color: white;
-  vertical-align: middle;
-  font-size: 1.1em;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 4em;
-}
-.menu a:hover {
-  font-size: 1.35em;
-  text-decoration: none;
-}
 .grand-opening {
   height: 3em;
 }
@@ -39,9 +7,6 @@ a {
 }
 h5 {
   color: maroon;
-}
-.row {
-  margin: auto;
 }
 .col-md-6 {
   background: maroon;
@@ -67,9 +32,64 @@ h5 {
   box-shadow: none;
   border-color: #243c4f;
 }
-.col-md-6 .btn {
+.col-md-6 button {
   min-height: 50px;
   border-radius: 0 20px 20px 0;
   background: #243c4f;
   color: #fff;
+}
+ .col-md-6 button:hover {
+  background: #243c4fe5;
+  color: #fff;
+  opacity: 1;
+} 
+/*navigation*/
+nav {
+  display: flex;
+  width: 98.55%;
+  margin-left: auto;
+  margin-right: auto;
+}
+nav a {
+  letter-spacing: 3px;
+  color: black;
+  vertical-align: middle;
+  font-size: medium;
+  margin-left: 4em;
+}
+nav a:hover {
+  text-decoration: none;
+  color: maroon;
+}
+.black {
+  height: 20px;
+  display: flex;
+  width: 98.55%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+i {
+  background-color: mediumvioletred;
+}
+
+.dropdown-menu a:hover {
+  background-color: maroon;
+  color: white;
+}
+.dropdown-menu a {
+  margin-left: auto;
+  margin-right: auto;
+}
+fa-icon {
+  font-size: 20px;
+}
+.active-link {
+  color: goldenrod;
+}
+span.navbar-toggler-icon {
+  background-color: maroon;
+}
+span.navbar-toggler-icon:hover {
+  opacity: 0.8;
 }
