@@ -3,7 +3,7 @@
     <div class="col-7">
       <div class="cart row">CART</div>
       <div class="row shadow p-3 mb-5 bg-white rounded" *ngFor="let item of lkit">
-        <app-cart-item-detail [kit]="item"></app-cart-item-detail>
+        <app-cart-item-detail [kit]="item" (editedEmitter)="ngOnInit()"></app-cart-item-detail>
       </div>
     </div>
     <div class="col-1"></div>
@@ -14,7 +14,10 @@
       <mat-divider></mat-divider>
       <div>Taxes</div>
       <mat-divider></mat-divider>
-      <div>Order Summary</div>
+        <div class="row">
+          <div class="total col-9 font-weight-bold">Order Summary</div>
+          <div class="total col-3 font-weight-bold">{{totalQnt}}</div>
+        </div>
       <mat-divider></mat-divider>
         <div class="row">
           <div class="total col-9 font-weight-bold">Order Total</div>

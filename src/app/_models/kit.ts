@@ -5,7 +5,8 @@ export interface KIT {
     Image: string,
     Discount: number,
     PriceDis: number,
-    NewFlag: string
+    NewFlag: string,
+    DefaultQnt: number
 }
 
 export class Kit {
@@ -13,11 +14,27 @@ export class Kit {
     constructor(
         public KitID: string,
         public KitName: string,
-        public Price: string,
+        public Price: number,
         public Image: string,
         public Discount: number,
         public PriceDis: number,
-        public NewFlag: string
-    ){}  
+        public NewFlag: string,
+        public Quantity: number
+    ){
+        this.KitID = KitID;
+        this.KitName = KitName;
+        this.Price = Price;
+        this.Image = Image;
+        this.Discount = Discount;
+        this.PriceDis = PriceDis;
+        this.NewFlag = NewFlag;
+        this.Quantity = 1;
+    }  
+    get quantity(){
+        return this.calcTotal();
+    }
+    calcTotal(){
+        return this.Quantity * this.Price;
+    }
 }
 

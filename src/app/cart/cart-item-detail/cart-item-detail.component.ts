@@ -1,25 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Kit } from '../../_models/kit';
+import { Component, OnChanges, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { KIT } from '../../_models/kit';
 
 @Component({
   selector: 'app-cart-item-detail',
   templateUrl: './cart-item-detail.component.html',
   styleUrls: ['./cart-item-detail.component.css']
 })
-export class CartItemDetailComponent implements OnInit {
-  @Input() kit: Kit;
+export class CartItemDetailComponent implements OnChanges {
+  @Input() kit: KIT;
+  @Output() editedEmitter = new EventEmitter();
   itemCount: number;
-
+  changeLog;
   constructor() { }
 
-  ngOnInit() {
-    this.itemCount=1;
+  ngOnChanges(changes: SimpleChanges) {
+    console.log("changes");
   }
+  
 
   addOne(){
-    this.itemCount = this.itemCount + 1;
+    this.kit.DefaultQnt = this.kit.DefaultQnt + 1;
+    this.editedEmitter.emit();
   }
   subOne(){
-    this.itemCount = this.itemCount - 1;
+    this.kit.DefaultQnt = this.kit.DefaultQnt - 1;
+    this.editedEmitter.emit();
   }
 }

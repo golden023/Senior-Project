@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 import { CartService } from '../../_services/cart.service'
 import { KIT } from '../../_models/kit';
 import { ActivatedRoute } from '@angular/router';
@@ -14,11 +14,12 @@ import { ConstantPool } from '@angular/compiler';
   styleUrls: ['./cart-main.component.css']
 
 })
-export class CartMainComponent implements OnInit {
+export class CartMainComponent implements OnInit, OnChanges {
   lkit: KIT[];
   checkoutForm;
   name: string;
   total=0;
+  totalQnt=0;
 
   constructor(
     private cartService: CartService,
@@ -41,6 +42,11 @@ export class CartMainComponent implements OnInit {
       this.name = params.get('Name');
     });
     this.total = this.getTotal(this.lkit);
+    this.totalQnt = this.getTotalQnt(this.lkit);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log("changes");
   }
 
   onSubmit(customerData) {
@@ -57,8 +63,13 @@ export class CartMainComponent implements OnInit {
       total = total + Number(element.PriceDis);
     });
     return total;
-
   }
-
+  getTotalQnt(lkit){
+    var totalQnt = 0;
+    lkit.forEach(function(element: KIT){
+      totalQnt = totalQnt + element.DefaultQnt;
+    });
+    return totalQnt;
+  }
 }
 

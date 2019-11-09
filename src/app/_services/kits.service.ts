@@ -4,7 +4,7 @@ import { HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-import { KIT } from '../_models/kit';
+import { KIT, Kit } from '../_models/kit';
 
 
 @Injectable({
