@@ -17,7 +17,7 @@ export class AllComponent implements OnInit {
   constructor(
     private service: KitsService,
     private cartService: CartService
-    ) {}
+  ) { }
   ngOnInit(): void {
     this.getKits();
   }
@@ -26,11 +26,12 @@ export class AllComponent implements OnInit {
       .subscribe(kits => {
         return (this.kits = kits);
       });
-  } 
+  }
   addToCart(KIT) {
+    window.alert('Your kit has been added to the cart!');
     this.cartService.addToCart(KIT);
   }
-  openKit(KIT): void{
+  openKit(KIT): void {
     console.log("getCart")
     this.openkit = KIT
   }
