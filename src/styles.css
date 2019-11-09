@@ -9,7 +9,7 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   margin: auto;
-  font-size: 2em;
+  font-size: 2rem;
   padding-top: 1%;
   padding-bottom: 1%;
   letter-spacing: 8px;
@@ -22,10 +22,13 @@ h2 {
 h3 {
   text-align: center;
   text-transform: capitalize;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   color: maroon;
   text-transform: uppercase;
+}
+h4{
+  font-size: 1rem;;
 }
 button {
   background-color: maroon;
@@ -36,7 +39,7 @@ button {
   height: 40px;
   border: none;
   width: 70%;
-  font-size: 95%;
+  font-size: 75%;
 }
 button:hover {
   opacity: 0.7;
@@ -89,7 +92,7 @@ a {
 .product-grid:hover .social li:nth-child(3) {
   transition-delay: 0.25s;
 }
-.product-grid .social li fa-icon {
+.product-grid .social li i {
   color: maroon;
   background-color: #fff;
   font-size: 16px;
@@ -100,14 +103,16 @@ a {
   border-radius: 50%;
   display: block;
   transition: all 0.3s ease 0s;
+  text-decoration: none;
 }
-.product-grid .social li fa-icon:hover {
+.product-grid .social li i:hover {
   color: #fff;
   background-color: rgba(128, 0, 0, 0.8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
 }
-.product-grid .social li fa-icon:after,
-.product-grid .social li fa-icon:before {
+.product-grid .social li i:after,
+.product-grid .social li fa-icon:before {/*why dies changing this line break it*/
   content: attr(data-tip);
   color: #fff;
   background-color: #000;
@@ -122,7 +127,7 @@ a {
   left: 50%;
   top: -30px;
 }
-.product-grid .social li fa-icon:after {
+.product-grid .social li i:after {
   content: "";
   height: 15px;
   width: 15px;
@@ -189,4 +194,7 @@ a {
     margin-bottom: 30px;
   }
 }
-/*product pages*/
+/*modal*/
+h3.modal-title {
+  margin: auto;
+}

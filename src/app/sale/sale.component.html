@@ -22,7 +22,6 @@
                 <input type="radio" name="price" value="$$"> $20 - $50<br>
                 <input type="radio" name="price" value="$$$"> $50 - $100<br>
                 <input type="radio" name="price" value="$$$"> $100+<br>
-
                 <input type="submit" value="Clear">
                 <input type="submit" value="Submit">
             </form>
@@ -32,16 +31,15 @@
                 <div class="col-md-3 col-sm-6" *ngFor="let kit of skits">
                     <div class="product-grid">
                         <div class="product-image">
-                            <a routerLink="#">
-                                <img src="{{kit.Image}}">
+                            <a class="kit-page" data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
+                                <img src={{kit.Image}}>
                             </a>
                             <ul class="social">
-                                <li><a [routerLink]="['/kitPage',kit.KitID]" data-tip="Quick View"
-                                        (click)="addToCart(kit)">
-                                        <fa-icon icon="eye"></fa-icon>
+                                <li><a data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
+                                        <i class="fas fa-eye"></i>
                                     </a></li>
-                                <li><a routerLink="#" data-tip="Add to Wishlist">
-                                        <fa-icon icon="heart"></fa-icon>
+                                <li><a data-tip="Add to Wishlist">
+                                        <i class='fas fa-heart'></i>
                                     </a></li>
                             </ul>
                             <span class="product-new-label">{{kit.NewFlag}}</span>
@@ -54,6 +52,44 @@
                                 <span>{{kit.Price | currency }}</span>
                             </div>
                             <button (click)="addToCart(kit)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade product_view" id="product-view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" class="class pull-right"><span
+                        class="glyphicon glyphicon-remove"></span></a>
+                <h3 class="modal-title">{{this?.openkit?.KitName}}</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img class="mw-100" src={{this?.openkit?.Image}}>
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4>Product Id: <span>{{this?.openkit?.KitID}}</span></h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy
+                            text of the printing and typesetting industry.</p>
+                        <h3 class="cost">{{this?.openkit?.PriceDis | currency }}
+                            <span><small class="pre-cost">{{this?.openkit?.Price | currency }}</small></span></h3>
+                        <div class="row">
+                        </div>
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                            <button (click)="addToCart(this?.openkit)"><span>
+                                    <i class='fa fa-icon-cart'></i>
+                                </span>Add to Cart</button>
+                            <button (click)="addToWish(this?.openkit)"><span>
+                                    <i class='fa fa-icon-heart'></i>
+                                </span>Add To Wishlist</button>
                         </div>
                     </div>
                 </div>
