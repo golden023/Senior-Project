@@ -6,7 +6,16 @@ export interface KIT {
     Discount: number,
     PriceDis: number,
     NewFlag: string,
-    DefaultQnt: number
+    DefaultQnt: number,
+    ShippingCost: number,
+}
+
+export interface TOTALS {
+    subtotal: number,
+    totalQnt: number,
+    shipping: number,
+    taxes: number,
+    total: number,
 }
 
 export class Kit {

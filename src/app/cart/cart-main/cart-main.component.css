@@ -6,7 +6,7 @@
     background-color: none;
     color: black;
     margin-top: 25px;
-    font-size: 40px;
+    font-size: 35px;
   }
 
   .item {
@@ -19,5 +19,36 @@
   }
 
   .total {
+    font-size: 17px;
+    word-wrap: break-word;
+  }
+
+  .totalQnt{
+    font-size: 17px;
+    word-wrap: break-word;
+  }
+
+  .checkout{
+    padding-top: 25px;
+  }
+  .checkout button{
     font-size: 20px;
+    font-weight: bold;
+  }
+  .help {
+    padding-top: 25px;
+  }
+  .helpLinkMain{
+    font-size: 17px;
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+  a {
+    font-size: 16px;
+    color: black;
+    text-decoration-color: maroon;
+  }
+  a:hover {
+    text-decoration: none;
+    color: maroon;
   }

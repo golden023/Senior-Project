@@ -12,6 +12,7 @@ import { KitPageComponent } from './kit-page/kit-page.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { FaqComponent } from './faq/faq.component';
 import { CartMainComponent } from './cart/cart-main/cart-main.component';
+import { CheckoutMainComponent } from './checkout/checkout-main/checkout-main.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartMainComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutMainComponent
   }
 ];
 

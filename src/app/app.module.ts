@@ -26,6 +26,8 @@ import { CartMainComponent } from './cart/cart-main/cart-main.component';
 import { CartItemDetailComponent } from './cart/cart-item-detail/cart-item-detail.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckoutMainComponent } from './checkout/checkout-main/checkout-main.component';
+import { CheckoutShippingComponent } from './checkout/checkout-shipping/checkout-shipping.component';
 library.add(fas);
 
 @NgModule({
@@ -58,7 +60,9 @@ library.add(fas);
     AboutusComponent,
     FaqComponent,
     CartMainComponent,
-    CartItemDetailComponent
+    CartItemDetailComponent,
+    CheckoutMainComponent,
+    CheckoutShippingComponent
   ],
 
   bootstrap: [AppComponent]
