@@ -47,12 +47,5 @@ export class KitsService {
     return this.http.get<KIT[]>(`http://localhost:5000/singlekit`, options)
       .pipe();
   }
-
-  sort() {
-    this.getTopKits
-      .sort((a: Kit, b: Kit) => {
-        return a.price.valueOf() - b.price.valueOf();
-      })
-  }
 }
 
