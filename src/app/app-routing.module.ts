@@ -11,7 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { FaqComponent } from './faq/faq.component';
-import { CartComponent } from './cart/cart.component';
+import { CartMainComponent } from './cart/cart-main/cart-main.component';
+import { CheckoutMainComponent } from './checkout/checkout-main/checkout-main.component';
 
 const routes: Routes = [
   {
@@ -64,7 +65,11 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    component: CartComponent
+    component: CartMainComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutMainComponent
   }
 ];
 

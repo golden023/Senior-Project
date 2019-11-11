@@ -194,7 +194,12 @@ a {
     margin-bottom: 30px;
   }
 }
+/*product pages*/
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /*modal*/
 h3.modal-title {
   margin: auto;
 }
+
