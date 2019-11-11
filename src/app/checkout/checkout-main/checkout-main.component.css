@@ -1,0 +1,44 @@
+.checkout {
+    margin-top: 25px;
+  }
+.checkout-detail{
+    margin: auto;
+    font-weight: bold;
+}
+.item-detail{
+    padding-top: 5px;
+    margin: auto;
+    font-size: 20px;
+}
+img { 
+    width: 100%;
+    height: auto;
+}
+.kitinfo{
+    font-size: 12px;
+    font-weight: lighter;
+}
+.priceinfo{
+    font-size: 12px;
+    font-weight: bold;
+}
+.kitname{
+    font-size: 14px;
+    font-weight:bold;
+}
+.total-detail{
+    font-size: 20px;
+    font-weight: bold;
+}
+.cost-detail{
+    font-size: 16px;
+}
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

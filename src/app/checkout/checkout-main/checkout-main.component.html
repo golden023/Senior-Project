@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <div class="checkout col-7">
+            <div class="row">
+                    <label for="exampleInputEmail1">CUSTOMER</label>
+            </div>
+            <form [formGroup]="this.customerForm" (ngSubmit)="onSubmit()">
+            <div class='row'>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class='row'>SHIPPING ADDRESS</div>
+            <div class="row">
+                <div class='col'>
+                        <input class="form-control form-control-lg" type="text" placeholder="First Name">
+                </div>
+                <div class='col'>
+                        <input class="form-control form-control-lg" type="text" placeholder="Last Name">
+                </div>
+            </div>
+            <div class='row'>
+                    <input class="form-control form-control-lg" type="text" placeholder="Contact Phone Number">
+            </div>
+            <div class='row'>
+                    <input class="form-control form-control-lg" type="text" placeholder="Shipping Address">
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class='row'>PAYMENT</div>
+            <div class='row'>
+                    <input class="form-control form-control-lg" type="text" placeholder="Paypal">
+            </div>
+            <div class="form-group">
+                    <button [disabled]="loading">Purchase</button>
+                    <img *ngIf="loading" class="pl-3"
+                        src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            </div>
+        </form>
+        </div>
+        <div class="col-1"></div>
+        <div class="checkout col-4 shadow p-3 mb-5 bg-white rounded">
+            <div class="item-detail row">ORDER SUMMARY</div>
+            <mat-divider></mat-divider>
+            <div class="item-detail row" *ngFor="let kit of lkit">
+                <div class="col-12">
+                    <div class='row'>
+                        <div class='col'>
+                            <img src={{kit.Image}}>
+                        </div>
+                        <div class='kitinfo col'>
+                            <div class='kitname'>{{kit.KitName}}</div>
+                            <div>Qty: {{kit.DefaultQnt}}</div>
+                        </div>
+                        <div class='priceinfo col text-right'>
+                            <div>{{kit.PriceDis | currency}}</div>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                </div>
+            </div>
+            <div class="cost-detail row">
+                <div class="col">
+                    <div class="row">
+                        <div class='col'>SubTotal:</div>
+                        <div class='col text-right'>{{totals.subtotal | currency}}</div>
+                    </div>
+                    <div class="row">
+                        <div class='col'>Shipping:</div>
+                        <div class='col text-right'>{{totals.shipping | currency}}</div>
+                    </div>
+                    <div class="row">
+                        <div class='col'>Sales Tax:</div>
+                        <div class='col text-right'>{{totals.taxes| currency}}</div>
+                    </div>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="total-detail row">
+                <div class="col">Total</div>
+                <div class="col text-right">{{totals.total | currency}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -18,10 +18,18 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { KitPageComponent } from './kit-page/kit-page.component';
 import { FaqComponent } from './faq/faq.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { CartComponent } from './cart/cart.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { CartMainComponent } from './cart/cart-main/cart-main.component';
+import { CartItemDetailComponent } from './cart/cart-item-detail/cart-item-detail.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckoutMainComponent } from './checkout/checkout-main/checkout-main.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
 
 @NgModule({
   imports: [
@@ -34,7 +42,9 @@ import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
     AccordionModule,
     RecaptchaModule,
     FontAwesomeModule,
-    AccordionModule
+    AccordionModule,
+    MatDividerModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
@@ -50,7 +60,9 @@ import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
     KitPageComponent,
     AboutusComponent,
     FaqComponent,
-    CartComponent
+    CartMainComponent,
+    CartItemDetailComponent,
+    CheckoutMainComponent,
   ],
 
   bootstrap: [AppComponent]
