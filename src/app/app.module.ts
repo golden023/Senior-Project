@@ -27,6 +27,8 @@ import { CartItemDetailComponent } from './cart/cart-item-detail/cart-item-detai
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckoutMainComponent } from './checkout/checkout-main/checkout-main.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
 
 @NgModule({
@@ -65,4 +67,11 @@ library.add(fas);
 
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas);
+    library.addIcons(faCoffee);
+  }
+
+
+ }
