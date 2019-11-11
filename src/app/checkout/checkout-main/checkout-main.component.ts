@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { CartService } from '../../_services/cart.service'
 import { KIT, TOTALS } from '../../_models/kit';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout-main',
@@ -9,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./checkout-main.component.css']
 })
 export class CheckoutMainComponent implements OnInit {
+  customerForm: FormGroup;
   lkit: KIT[];
   totals = {
     subtotal: 0,
@@ -19,9 +21,11 @@ export class CheckoutMainComponent implements OnInit {
   };
   checkoutForm;
   name: string;
-  
+  submitted = false;
+  loading = false;
 
   constructor(
+    private formBuilder: FormBuilder,
     private cartService: CartService,
     private route:ActivatedRoute,
   ) { 
@@ -30,11 +34,19 @@ export class CheckoutMainComponent implements OnInit {
 
   ngOnInit() {
     this.lkit = this.cartService.getItem();
-    this.route.paramMap.subscribe(params => {
-      console.log(params.get('Name'));
-      this.name = params.get('Name');
-    });
     this.totals = this.getTotals(this.lkit);
+
+    this.customerForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      shippingAdd: ['', Validators.required]
+    });
+  }
+
+  f(){
+    return this.customerForm.controls;
   }
 
   getTotals(lkit){
@@ -60,5 +72,19 @@ export class CheckoutMainComponent implements OnInit {
       total: total
     };
     return totals;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.customerForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.cartService.purchase(this.lkit)
+      .pipe()
+      .subscribe();
   }
 }
