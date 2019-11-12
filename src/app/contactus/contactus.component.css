@@ -1,0 +1,15 @@
+input {
+    width: 500px;
+
+}
+textarea {
+    width: 500px;
+}
+
+button {
+    margin-left:20px;
+    position: absolute;
+    width:20%;
+    
+    
+}
