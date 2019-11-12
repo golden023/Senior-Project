@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -60,7 +60,9 @@ import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
     CartItemDetailComponent,
     CheckoutMainComponent,
   ],
-
+  providers: [
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -70,4 +72,4 @@ export class AppModule {
   }
 
 
- }
+}
