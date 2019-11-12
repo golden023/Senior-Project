@@ -78,16 +78,16 @@
         <h5>HOW CAN WE HELP?</h5>
         <ul class="list-unstyled">
           <li>
-            <a href="#!">Customer Service</a>
+            <a (click)="setTitle( 'Customer Service' )" routerLink="/contactus" routerLinkActive="active-link">Customer Service</a>
           </li>
           <li>
-            <a href="#!">Track My Order</a>
+            <a (click)="setTitle( 'Track My Order' )" routerLink="/tracking" routerLinkActive="active-link">Track My Order</a>
           </li>
           <li>
-            <a href="#!">Returns</a>
+            <a (click)="setTitle( 'Returns' )" routerLink="/returns" routerLinkActive="active-link">Returns</a>
           </li>
           <li>
-            <a href="#!">Gift Vouchers</a>
+            <a (click)="setTitle( 'Gift Vouchers' )" routerLink="/vouchers" routerLinkActive="active-link">Gift Vouchers</a>
           </li>
         </ul>
       </div>
