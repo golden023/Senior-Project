@@ -1,99 +1,75 @@
 img {
-    vertical-align: middle;
-    height: 500px;
-    margin: auto;
+  max-width: 100%;
+}
+@media screen and (max-width: 996px) {
+  .preview {
+    margin-bottom: 20px;
+  }
+}
+.card {
+  margin-top: 50px;
+  padding: 3em;
+  line-height: 1.5em;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 997px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    width: inherit;
   }
-  .row {
-    width: inherit;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 1%;
-  }
-  h3 {
-    text-align: center;
-    color: #6f6b6b;
-    padding: 5px;
-    text-transform: uppercase;
-  }
-  .card {
-    width: 80%;
-    min-width: 200px;
-    height: 650px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    align-items: center;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .card-img-top {
-    width: 100%;
-    height: 450px;
-    justify-content: center;
-    color: white;
-    transition: all 0.8s ease;
-    background-color: coral; /* remove later*/
-  }
-  .card-title {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    margin-top: 20px;
-    color: maroon;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 2.2em
-  }
-  .card-text {
-    width: 80%;
-    margin: 0 auto;
-    font-size: 13px;
-    text-align: center;
-    margin-top: 20px;
-    color: black;
-    letter-spacing: 2px;
+}
+.product-title, .price {
+  text-transform: UPPERCASE;
+  font-weight: bold; 
+}
+.price{
+  font-size: 12px;
+}
+.checked, .price span {
+  color: maroon;
+}
+.product-title, .rating, .product-description, .price {
+  margin-bottom: 15px;
+}
+.product-title {
+  margin-top: 0;
+  font-size: large;
+}
+.add-to-cart, .like {
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  margin-right: 3px;
+}
+@-webkit-keyframes opacity {
+  0% {
     opacity: 0;
-    max-height: 0;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    -webkit-transform: scale(3);
+    transform: scale(3);
   }
-  .card:hover {
-    height: 650px;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 8%;
-  }
-  .card:hover .card-text {
-    transition: all 0.3s ease;
+  100% {
     opacity: 1;
-    max-height: 40px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  a {
-    text-decoration: none;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(3);
+    transform: scale(3);
   }
-  .thumbnail {
-    max-width: 300px;
-    margin: 8%;
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  .thumbnail:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    height: 355px;
-  }
-  .thumbnail a {
-    background-color: chocolate;
-  }
-  .thumbnail img {
-    background-color: darkgreen;
-    width: 100%;
-    height: 80%;
-  }
-  .caption {
-      font-size: 13px;
-      text-align: center;
-      color: black;
-      letter-spacing: 1px;
-      margin-top: 8px;
-  }
-  
+}
+
+/*# sourceMappingURL=style.css.map */

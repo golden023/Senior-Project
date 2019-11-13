@@ -8,7 +8,7 @@
 h1 {
   text-transform: uppercase;
   text-align: center;
-  margin: auto;
+  margin: auto !important;
   font-size: 2rem;
   padding-top: 1%;
   padding-bottom: 1%;
@@ -27,18 +27,18 @@ h3 {
   color: maroon;
   text-transform: uppercase;
 }
-h4{
-  font-size: 1rem;;
+h4 {
+  font-size: 1rem;
 }
 button {
   background-color: maroon;
   color: white;
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  /* display: block; */
   height: 40px;
   border: none;
-  width: 70%;
+  max-width: 70%;
   font-size: 75%;
 }
 button:hover {
@@ -112,7 +112,8 @@ a {
   text-decoration: none;
 }
 .product-grid .social li i:after,
-.product-grid .social li fa-icon:before {/*why dies changing this line break it*/
+.product-grid .social li fa-icon:before {
+  /*why dies changing this line break it*/
   content: attr(data-tip);
   color: #fff;
   background-color: #000;
@@ -196,10 +197,19 @@ a {
 }
 /*product pages*/
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 /*modal*/
 h3.modal-title {
   margin: auto;
 }
-
+.submit{
+  display: block;
+  font-size: 10px;
+}

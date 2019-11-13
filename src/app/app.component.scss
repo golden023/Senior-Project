@@ -49,20 +49,22 @@ nav {
   width: 98.55%;
   margin-left: auto;
   margin-right: auto;
+  height: 60px;
 }
 nav a {
   letter-spacing: 3px;
   color: black;
   vertical-align: middle;
-  font-size: medium;
+  font-size: 1em;
   margin-left: 4em;
+  text-align: center;
 }
 nav a:hover {
   text-decoration: none;
   color: maroon;
 }
 .black {
-  height: 20px;
+  height: 15px;
   display: flex;
   width: 98.55%;
   margin-left: auto;
