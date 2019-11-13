@@ -1,8 +1,9 @@
-<h1>Gift Vouchers</h1>
+<div class="page">
+    <h1>Gift Vouchers</h1>
 
 
-<div class="row">
-    
+    <div class="row">
+
         <div class="col-md-3">
             <form name="filters">
                 <h2>Amount on Voucher</h2>
@@ -10,16 +11,18 @@
                 <input type="radio" name="price" value="$$"> $20<br>
                 <input type="radio" name="price" value="$$$"> $50<br>
                 <input type='radio' name='price' value="$$$$"> $100<br>
-            
-                <input type="submit" value="Add To Cart">
+
+                <button (click)="addToCart(kit)">Add to Cart</button>
             </form>
 
-            
-<br>
-<h2>Custom Amount</h2>
 
-<form action="/action_page.php">
-     <input type="text" name="amount" value="$0.00"><br>
-<input type="submit" value="Add to cart">
-</form>
+            <br>
+            <h2>Custom Amount</h2>
 
+            <form action="/action_page.php">
+                <input type="text" name="amount" value="$0.00"><br>
+                <button (click)="addToCart(kit)">Add to Cart</button>
+            </form>
+
+
+        </div>

@@ -1,47 +1,48 @@
+<div class="pag">
+  <h1>Online Returns</h1>
+
+  <h2>1. Retrieve Your Order</h2>
+
+  <form>
+
+    <div>
+      <label for="name">
+        Order Number:
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+      <label for="address">
+        Order Email:
+      </label>
+      <input id="address" type="email" formControlName="address">
+
+    </div>
+
+    <button class="button" type="submit">Retrieve Order</button>
+
+  </form>
+
+  <br>
+  <br>
+  <br>
+  <h2>2. Choose A Reason For Return</h2>
+
+  <input type="radio" name="sort" value="Item Damanged"> Item Damaged<br>
+  <input type="radio" name="sort" value="Missing Products"> Missing Products<br>
+  <input type="radio" name="sort" value="Wrong Item Bought">Wrong Item Bought<br>
+  <input type="radio" name="sort" value="Order Placed By Mistake">Order Placed By Mistake<br>
+  <input type="radio" name="sort" value="Inaccurate Website Description">Inaccurate Website Description<br>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <button class="button" type="submit">Create Return</button>
+
+  </form>
+  <br>
+  <br>
+  <br>
+  <a href="../assets/Return-Policy.docx"><strong><u>Return Policy</u></strong></a>
 
 
-<h1>Online Returns</h1>
-
-<h2>1. Retrieve Your Order</h2>
-
-<form>
-
-        <div>
-          <label for="name">
-            Order Number: 
-          </label>
-          <input id="name" type="text" formControlName="name">
-        </div>
-      
-        <div>
-          <label for="address">
-            Order Email: 
-          </label>
-          <input id="address" type="email" formControlName="address">
-          
-        </div>
-      
-        <button class="button" type="submit">Retrieve Order</button>
-      
-      </form>
-
-<br>
-<br>
-<br>
-<h2>2. Choose A Reason For Return</h2>
-
-<input type="radio" name="sort" value="Item Damanged"> Item Damaged<br>
-<input type="radio" name="sort" value="Missing Products"> Missing Products<br>
-<input type="radio" name="sort" value="Wrong Item Bought">Wrong Item Bought<br>
-<input type="radio" name="sort" value="Order Placed By Mistake">Order Placed By Mistake<br>
-<input type="radio" name="sort" value="Inaccurate Website Description">Inaccurate Website Description<br>
-
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-<button class="button" type="submit">Create Return</button>
-
-</form>
-<br>
-<br>
-<br>
-<a href="../assets/Return-Policy.docx"><strong><u>Return Policy</u></strong></a>
-
+</div>
