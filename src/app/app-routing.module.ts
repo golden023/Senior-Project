@@ -13,6 +13,10 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { FaqComponent } from './faq/faq.component';
 import { CartMainComponent } from './cart/cart-main/cart-main.component';
 import { CheckoutMainComponent } from './checkout/checkout-main/checkout-main.component';
+import { VouchersComponent } from './vouchers/vouchers.component';
+import { ReturnsComponent } from './returns/returns.component';
+import { TrackingComponent } from './tracking/tracking.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 const routes: Routes = [
   {
@@ -57,6 +61,22 @@ const routes: Routes = [
   {
     path: 'faq',
     component: FaqComponent
+  },
+  {
+    path: 'contactus',
+    component: ContactusComponent
+  },
+  {
+    path: 'returns',
+    component: ReturnsComponent
+  },
+  {
+    path: 'vouchers',
+    component: VouchersComponent
+  },
+  {
+    path: 'tracking',
+    component: TrackingComponent
   },
   {
     path: '',

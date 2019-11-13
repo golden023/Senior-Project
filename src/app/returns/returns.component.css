@@ -1,0 +1,17 @@
+.name {
+    margin-left: 50px;
+}
+
+button {
+    width:20%;
+    position:absolute;
+    margin-left: 20px;
+}
+
+div {
+    margin-left: 10px;
+}
+
+input {
+    margin-left: 10px;
+}

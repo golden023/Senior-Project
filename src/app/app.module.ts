@@ -26,6 +26,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckoutMainComponent } from './checkout/checkout-main/checkout-main.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
+import { ReturnsComponent } from './returns/returns.component';
+import { VouchersComponent } from './vouchers/vouchers.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { TrackingComponent } from './tracking/tracking.component';
 
 @NgModule({
   imports: [
@@ -59,6 +63,10 @@ import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
     CartMainComponent,
     CartItemDetailComponent,
     CheckoutMainComponent,
+    ReturnsComponent,
+    VouchersComponent,
+    ContactusComponent,
+    TrackingComponent,
   ],
   providers: [
     Title
