@@ -12,6 +12,7 @@ import { KitPageComponent } from './kit-page/kit-page.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { FaqComponent } from './faq/faq.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
   },
   {
     path: 'kitPage/:KitID',

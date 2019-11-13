@@ -22,6 +22,7 @@ import { CartComponent } from './cart/cart.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
     KitPageComponent,
     AboutusComponent,
     FaqComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent
   ],
 
   bootstrap: [AppComponent]
