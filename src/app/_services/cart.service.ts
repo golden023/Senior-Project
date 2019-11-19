@@ -7,15 +7,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
   items = [];
-
+  wishlist = [];
   constructor(private http: HttpClient) { } 
 
   addToCart(kit) {
     this.items.push(kit);
   }
 
+  addToWishList(kit){
+    this.wishlist.push(kit);
+  }
+
   getItem() {
     return this.items;
+  }
+
+  getWishList() {
+    return this.wishlist;
   }
 
   // Pushes Kit information to Backend
@@ -23,6 +31,11 @@ export class CartService {
   clearCart(){
     this.items = [];
     return this.items;
+  }
+
+  clearWishList(){
+    this.wishlist = [];
+    return this.wishlist;
   }
 
   purchase(kit: KIT[]){

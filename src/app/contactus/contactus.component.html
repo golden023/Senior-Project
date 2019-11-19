@@ -1,21 +1,21 @@
 <div class="page">
   <h1>Contact Us!</h1>
 
-  <form (ngSubmit)="processForm()">
+  <form (ngSubmit)="processForm">
 
 
     <div class="field">
-      <input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name">
+      <input type="text" name="name" class="input" placeholder="Your Name">
     </div>
 
 
     <div class="field">
-      <input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email">
+      <input type="email" name="email" class="input" placeholder="Your Email">
     </div>
 
 
     <div class="field">
-      <textarea class="textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message"></textarea>
+      <textarea class="textarea" name="message" placeholder="What's on your mind?"></textarea>
     </div>
 
     <button type="submit" class="button is-danger is-large">Submit</button>

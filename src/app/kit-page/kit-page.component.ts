@@ -41,4 +41,9 @@ export class KitPageComponent implements OnInit {
     this.cartService.addToCart(KIT);
   }
 
+  addToWish(KIT) {
+    window.alert('Kit has been added to your wishlist!');
+    this.cartService.addToWishList(KIT);
+  }
+
 }

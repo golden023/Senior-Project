@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './_services';
+import { UserService, AuthenticationService } from './_services';
 import { User } from './_models';
 import { Title } from '@angular/platform-browser';
 
@@ -10,7 +10,8 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  currentUser: User;
+  users = [];
 
   constructor(
     private router: Router,
@@ -19,7 +20,7 @@ export class AppComponent {
   ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
-  currentUser: User;
+  
 
   title = 'senior-project';
 

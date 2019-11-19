@@ -38,4 +38,7 @@ export class GiftComponent implements OnInit {
   addToWish(KIT) {
     this.cartService.addToCart(KIT);
   }
+  wishKit(KIT) {
+    this.cartService.addToWishList(KIT);
+  }
 }

@@ -38,4 +38,8 @@ export class AllComponent implements OnInit {
   addToWish(KIT) {
     this.cartService.addToCart(KIT);
   }
+  wishKit(KIT) {
+    window.alert('Kit has been added to your wishlist');
+    this.cartService.addToWishList(KIT);
+  }
 }
