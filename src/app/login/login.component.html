@@ -11,23 +11,24 @@
           <div class="form-group">
             <label for="username">Email Address</label>
             <input type="text" formControlName="username" class="form-control"
-              [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-              <div *ngIf="f.username.errors.required">Username is required</div>
-            </div>
+              [ngClass]="{ 'is-invalid': submitted && loginForm.controls['username'].errors }" />
+              <div *ngIf="submitted && loginForm.controls['username'].hasError('required')" 
+                class="error-message">Username is required
+              </div>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" formControlName="password" class="form-control"
-              [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
+              [ngClass]="{ 'is-invalid': submitted && loginForm.controls['password'].errors }" />
+            <div *ngIf="submitted && loginForm.controls['password'].hasError('required')" 
+              class="error-message">Password is required
             </div>
           </div>
           <div class="form-group">
-            <button [disabled]="loading">Login</button>
-            <img *ngIf="loading" class="pl-3"
-              src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Login
+            </button>
           </div>
         </form>
         <a class="forgot" (click)="openVerticallyCentered(content)">Forgot Password?</a>
@@ -37,8 +38,7 @@
       <h3>CREATE AN ACCOUNT</h3>
       <p>Get the benefits of an account: save time when ordering, get exclusive deals, and receive personalized
         suggestions.</p>
-      <a (click)="setTitle( 'Everyday Kits | Account Registration' )"
-        routerLink="/register"><button>Register</button></a>
+      <a routerLink="/register"><button>Register</button></a>
     </div>
   </div>
 </div>

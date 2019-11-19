@@ -35,7 +35,7 @@
   <input type="radio" name="sort" value="Order Placed By Mistake">Order Placed By Mistake<br>
   <input type="radio" name="sort" value="Inaccurate Website Description">Inaccurate Website Description<br>
 
-  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
     <button class="button" type="submit">Create Return</button>
 
   </form>

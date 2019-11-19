@@ -3,21 +3,30 @@ import { first } from 'rxjs/operators';
 
 import { User } from '../_models';
 import { UserService, AuthenticationService } from '../_services';
+import { CartService } from '../_services/cart.service';
+import { KIT } from '../_models/kit';
 
-@Component({ templateUrl: 'userHome.component.html' })
+@Component({ 
+  selector: 'app-userHome',  
+  templateUrl: './userHome.component.html', 
+  styleUrls: ['./userHome.component.css']
+})
 export class UserhomeComponent implements OnInit {
   currentUser: User;
-  users = [];
+  users: User[];
+  wish: KIT [];
 
   constructor(
     private authenticationService: AuthenticationService,
-    private userService: UserService
+    private userService: UserService,
+    private cartService: CartService
   ) {
     this.currentUser = this.authenticationService.currentUserValue;
   }
 
   ngOnInit() {
     this.loadAllUsers();
+    this.wish = this.cartService.getWishList();
   }
 
   deleteUser(id: number) {

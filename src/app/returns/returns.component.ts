@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-returns',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./returns.component.css']
 })
 export class ReturnsComponent implements OnInit {
+  checkoutForm: FormGroup;
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+
+  ) { }
 
   ngOnInit() {
+    this.checkoutForm = this.formBuilder.group({});
   }
+
+  onSubmit(){}
 
 }

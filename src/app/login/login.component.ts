@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService } from '../_services';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
-  selector: 'ngbd-modal-options',
-  templateUrl: 'login.component.html',
+  selector: 'app-login',
+  templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 
@@ -26,10 +27,7 @@ export class LoginComponent implements OnInit {
     private alertService: AlertService,
     private modalService: NgbModal
   ) {
-    // redirect to home if already logged in
-    if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/userHome']);
-    }
+    
   }
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
@@ -42,10 +40,12 @@ export class LoginComponent implements OnInit {
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/userHome';
-  }
 
-  // convenience getter for easy access to form fields
-  get f() { return this.loginForm.controls; }
+    // redirect to home if already logged in
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/userHome']);
+    }
+  }
 
   onSubmit() {
     this.submitted = true;
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.login(this.loginForm.controls.username.value, this.loginForm.controls.password.value)
       .pipe(first())
       .subscribe(
         data => {
