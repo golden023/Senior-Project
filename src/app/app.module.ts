@@ -30,7 +30,12 @@ import { ReturnsComponent } from './returns/returns.component';
 import { VouchersComponent } from './vouchers/vouchers.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { TrackingComponent } from './tracking/tracking.component';
-
+import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
+import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
+import { TermsComponent } from './terms/terms.component';
+import { ShippinginfoComponent } from './shippinginfo/shippinginfo.component';
+import { BirthdayComponent } from './birthday/birthday.component';
+import { TailgateComponent } from './tailgate/tailgate.component';
 
 @NgModule({
   imports: [
@@ -68,6 +73,12 @@ import { TrackingComponent } from './tracking/tracking.component';
     VouchersComponent,
     ContactusComponent,
     TrackingComponent,
+    ReturnpolicyComponent,
+    PrivacypolicyComponent,
+    TermsComponent,
+    ShippinginfoComponent,
+    BirthdayComponent,
+    TailgateComponent,
   ],
   providers: [
     Title
