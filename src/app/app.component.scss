@@ -8,37 +8,37 @@ a {
 h5 {
   color: maroon;
 }
-.col-md-6 {
+.col-lg-6.col-md-3.col-sm-12 {
   background: maroon;
   margin: 0 auto;
   text-align: center;
   padding-bottom: 10px;
 }
-.col-md-6 h5 {
+.col-lg-6.col-md-3.col-sm-12 h5 {
   font-size: 24px;
   color: white;
   text-transform: uppercase;
   margin-bottom: 20px;
   margin-top: 20px;
 }
-.col-md-6 .form-control {
+.col-lg-6.col-md-3.col-sm-12 .form-control {
   height: 50px;
   background: rgba(255, 255, 255, 0.6);
   border-color: transparent;
   border-radius: 20px 0 0 20px;
   width: 10%;
 }
-.col-md-6.form-control:focus {
+.col-lg-6.col-md-3.col-sm-12.form-control:focus {
   box-shadow: none;
   border-color: #243c4f;
 }
-.col-md-6 button {
+.col-lg-6.col-md-3.col-sm-12 button {
   min-height: 50px;
   border-radius: 0 20px 20px 0;
   background: #243c4f;
   color: #fff;
 }
- .col-md-6 button:hover {
+.col-lg-6.col-md-3.col-sm-12 button:hover {
   background: #243c4fe5;
   color: #fff;
   opacity: 1;

@@ -1,142 +1,154 @@
-<!--Navbar -->
-<link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
+<div class="page">
+  <div class="container">
+    <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
 
-<nav class="navbar navbar-expand-md">
-  <a (click)="setTitle( 'Everyday Kits | Events Made Easy' )" routerLink="/home" routerLinkActive="active-link"><img
-      width="250" alt="Site Logo" src="../assets/tempLogo.png" /></a>
-  <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbar"
-    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a (click)="setTitle( 'Kits For Every Occasion' )" class="nav-link" routerLink="/all"
-          routerLinkActive="active-link">All Kits</a>
-      </li>
-      <li class="nav-item">
-        <a (click)="setTitle( 'Kits For Events' )" class="nav-link" routerLink="/event"
-          routerLinkActive="active-link">Event Kits</a>
-      </li>
-      <li class="nav-item">
-        <a (click)="setTitle( 'Kits For Gifts' )" class="nav-link" routerLink="/gift"
-          routerLinkActive="active-link">Gift Baskets</a>
-      </li>
-      <li class="nav-item">
-        <a (click)="setTitle( 'Kits on Sale' )" class="nav-link" routerLink="/sale" routerLinkActive="active-link">Sale
-          Kits</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li ngbDropdown class="nav-item dropdown" *ngIf="!currentUser">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <fa-icon icon="user"></fa-icon>
-        </a>
-        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-          <a (click)="setTitle( 'Everyday Kits | Account Login' )" class="dropdown-item" routerLink="/login"
-            routerLinkActive="active-link">Login</a>
-          <a (click)="setTitle( 'Everyday Kits | Account Registration' )" class="dropdown-item" routerLink="/register"
-            routerLinkActive="active-link">Register</a>
-        </div>
-      </li>
-      <li class="nav-item" *ngIf="currentUser">
-        <a (click)="setTitle( 'Everyday Kits | User Home' )" class="nav-link" routerLink="/userHome"
-          routerLinkActive="active-link">
-          <fa-icon icon="home"></fa-icon>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a (click)="setTitle( 'Everyday Kits | Favorites' )" class="nav-link" routerLink="#"
-          routerLinkActive="active-link">
-          <fa-icon icon="heart"></fa-icon>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a (click)="setTitle( 'Everyday Kits | Shopping Cart' )" class="nav-link" routerLink="/cart"
-          routerLinkActive="active-link">
-          <fa-icon icon="shopping-cart"></fa-icon>
-        </a>
-      </li>
-      <li class="nav-item" *ngIf="currentUser">
-        <a (click)="logout()" class="nav-link" routerLink="/"
-        routerLinkActive="active-link">Logout {{this.currentUser.firstName}}</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!--/.Navbar -->
-<div class="black"></div>
-<div>
-  <router-outlet></router-outlet>
-</div>
-<footer class="page-footer font-small blue pt-4">
-  <div class="container-fluid text-center text-md-left">
-    <div class="row">
-      <div class="col-md-6 mt-md-0 mt-3">
-        <h5>Get Exclusive Offers & Updates</h5>
-        <form class="input-group" ng-submit="submitForm(userForm.$valid)" novalidate>
-          <input type="email" class="form-control" placeholder="Your email">
-          <div class="input-group-btn">
-            <button class="submit">Sign up</button>
-          </div>
-        </form>
-      </div>
-      <hr class="clearfix w-100 d-md-none pb-3">
-      <div class="first">
-        <h5>HOW CAN WE HELP?</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a (click)="setTitle( 'Customer Service' )" routerLink="/contactus" routerLinkActive="active-link">Customer Service</a>
+    <nav class="navbar navbar-expand-md">
+      <a (click)="setTitle( 'Everyday Kits | Events Made Easy' )" routerLink="/home" routerLinkActive="active-link"><img
+          width="150" alt="Site Logo" src="../assets/tempLogo.png" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--Navbar -->
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a (click)="setTitle( 'Kits For Every Occasion' )" class="nav-link" routerLink="/all"
+              routerLinkActive="active-link">All Kits</a>
           </li>
-          <li>
-            <a (click)="setTitle( 'Track My Order' )" routerLink="/tracking" routerLinkActive="active-link">Track My Order</a>
+          <li class="nav-item">
+            <a (click)="setTitle( 'Kits For Events' )" class="nav-link" routerLink="/event"
+              routerLinkActive="active-link">Event Kits</a>
           </li>
-          <li>
-            <a (click)="setTitle( 'Returns' )" routerLink="/returns" routerLinkActive="active-link">Returns</a>
+          <li class="nav-item">
+            <a (click)="setTitle( 'Kits For Gifts' )" class="nav-link" routerLink="/gift"
+              routerLinkActive="active-link">Gift Baskets</a>
           </li>
-          <li>
-            <a (click)="setTitle( 'Gift Vouchers' )" routerLink="/vouchers" routerLinkActive="active-link">Gift Vouchers</a>
+          <li class="nav-item">
+            <a (click)="setTitle( 'Kits on Sale' )" class="nav-link" routerLink="/sale"
+              routerLinkActive="active-link">Sale
+              Kits</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li ngbDropdown class="nav-item dropdown" *ngIf="!currentUser">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <fa-icon icon="user"></fa-icon>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+              <a (click)="setTitle( 'Everyday Kits | Account Login' )" class="dropdown-item" routerLink="/login"
+                routerLinkActive="active-link">Login</a>
+              <a (click)="setTitle( 'Everyday Kits | Account Registration' )" class="dropdown-item"
+                routerLink="/register" routerLinkActive="active-link">Register</a>
+            </div>
+          </li>
+          <li class="nav-item" *ngIf="currentUser">
+            <a (click)="setTitle( 'Everyday Kits | User Home' )" class="nav-link" routerLink="/userHome"
+              routerLinkActive="active-link">
+              <fa-icon icon="home"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a (click)="setTitle( 'Everyday Kits | Favorites' )" class="nav-link" routerLink="#"
+              routerLinkActive="active-link">
+              <fa-icon icon="heart"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a (click)="setTitle( 'Everyday Kits | Shopping Cart' )" class="nav-link" routerLink="/cart"
+              routerLinkActive="active-link">
+              <fa-icon icon="shopping-cart"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="currentUser">
+            <a (click)="logout()" class="nav-link" routerLink="/" routerLinkActive="active-link">Logout
+              {{this.currentUser.firstName}}</a>
           </li>
         </ul>
       </div>
-      <div class="middle">
-        <h5>INFORMATION</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a (click)="setTitle( 'About Everyday Kits' )" routerLink="/aboutus" routerLinkActive="active-link">About
-              Everyday Kits</a>
-          </li>
-          <li>
-            <a (click)="setTitle( 'Everyday Kits | Frequently Asked Questions' )" routerLink="/faq"
-              routerLinkActive="active-link">Frequently Asked Questions</a>
-          </li>
-          <li>
-            <a (click)="setTitle( 'Terms Of Service' )" routerLink="/terms" routerLinkActive="active-link">Terms Of Service</a>
-          </li>
-          <li>
-            <a (click)="setTitle( 'Privacy Policy' )" routerLink="/privacypolicy" routerLinkActive="active-link">Privacy Policy</a>
-          </li>
-        </ul>
-      </div>
-      <div class="last">
-        <h5>QUICK LINKS</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a (click)="setTitle( 'My Account' )" routerLink="/myaccount" routerLinkActive="active-link">My Account</a>
-          </li>
-          <li>
-            <a (click)="setTitle( 'Shipping Information' )" routerLink="/shippinginfo"
-              routerLinkActive="active-link">Shipping Information</a>
-          </li>
-          <li>
-            <a (click)="setTitle( 'Return Policy' )" routerLink="/returnpolicy" routerLinkActive="active-link">Return Policy</a>
-          </li>
-        </ul>
-      </div>
+    </nav>
+    <!--/.Navbar -->
+    <div class="black"></div>
+    <div>
+      <router-outlet></router-outlet>
     </div>
+    <footer class="page-footer font-small blue pt-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-lg-6 col-md-3 col-sm-12 mt-md-0 mt-3">
+            <h5>Get Exclusive Offers & Updates</h5>
+            <form class="input-group" ng-submit="submitForm(userForm.$valid)" novalidate>
+              <input type="email" class="form-control" placeholder="Your email">
+              <div class="input-group-btn">
+                <button class="submit">Sign up</button>
+              </div>
+            </form>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-lg-2 col-md-3 col-sm-12">
+            <h5>HOW CAN WE HELP?</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a (click)="setTitle( 'Customer Service' )" routerLink="/contactus"
+                  routerLinkActive="active-link">Customer Service</a>
+              </li>
+              <li>
+                <a (click)="setTitle( 'Track My Order' )" routerLink="/tracking" routerLinkActive="active-link">Track My
+                  Order</a>
+              </li>
+              <li>
+                <a (click)="setTitle( 'Returns' )" routerLink="/returns" routerLinkActive="active-link">Returns</a>
+              </li>
+              <li>
+                <a (click)="setTitle( 'Gift Vouchers' )" routerLink="/vouchers" routerLinkActive="active-link">Gift
+                  Vouchers</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-12">
+            <h5>INFORMATION</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a (click)="setTitle( 'About Everyday Kits' )" routerLink="/aboutus"
+                  routerLinkActive="active-link">About
+                  Everyday Kits</a>
+              </li>
+              <li>
+                <a (click)="setTitle( 'Everyday Kits | Frequently Asked Questions' )" routerLink="/faq"
+                  routerLinkActive="active-link">Frequently Asked Questions</a>
+              </li>
+              <li>
+                <a (click)="setTitle( 'Terms Of Service' )" routerLink="/terms" routerLinkActive="active-link">Terms Of
+                  Service</a>
+              </li>
+              <li>
+                <a (click)="setTitle( 'Privacy Policy' )" routerLink="/privacypolicy"
+                  routerLinkActive="active-link">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-12">
+            <h5>QUICK LINKS</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a (click)="setTitle( 'My Account' )" routerLink="/myaccount" routerLinkActive="active-link">My
+                  Account</a>
+              </li>
+              <li>
+                <a (click)="setTitle( 'Shipping Information' )" routerLink="/shippinginfo"
+                  routerLinkActive="active-link">Shipping Information</a>
+              </li>
+              <li>
+                <a (click)="setTitle( 'Return Policy' )" routerLink="/returnpolicy"
+                  routerLinkActive="active-link">Return Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3">Copyright © 2019
+      </div>
+    </footer>
   </div>
-  <div class="footer-copyright text-center py-3">Copyright © 2019
-  </div>
-</footer>
+</div>
