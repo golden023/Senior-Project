@@ -1,28 +1,29 @@
-<div class="container">
+<div class="row">
     <h1>Gift Vouchers</h1>
-
-
-    <div class="row">
-
-        <div class="col-md-3">
-            <form name="filters">
-                <h2>Amount on Voucher</h2>
-                <input type="radio" name="price" value="$"> $10<br>
-                <input type="radio" name="price" value="$$"> $20<br>
-                <input type="radio" name="price" value="$$$"> $50<br>
-                <input type='radio' name='price' value="$$$$"> $100<br>
-
-                <button (click)="addToCart(kit)">Add to Cart</button>
-            </form>
-
-
-            <br>
-            <h2>Custom Amount</h2>
-
-            <form action="/action_page.php">
-                <input type="text" name="amount" value="$0.00"><br>
-                <button (click)="addToCart(kit)">Add to Cart</button>
-            </form>
-
-
+</div>
+<div class="row">
+    <h3>Voucher Amount</h3>
+</div>
+<div class="row">
+    <form [formGroup]="voucherForm" (ngSubmit)="onSubmit()">
+        <div class="radio">
+            <input type="radio" name="ten"><label><span><span></span></span>$10</label>
         </div>
+        <div class="radio">
+            <input type="radio" name="twenty5"><label><span><span></span></span>$25</label>
+        </div>
+        <div class="radio">
+            <input type="radio" name="fifty"><label><span><span></span></span>$50</label>
+        </div>
+        <div class="radio">
+            <input type="radio" name="1hundred"><label><span><span></span></span>$100</label>
+        </div>
+        <div class="form-group">
+            <label for="other">Other:</label>
+            <input type="other" formControlName="other" class="form-control">
+        </div>
+        <div class="form-group">
+            <button (click)="addToCart(kit)">Add to Cart</button>
+        </div>
+    </form>
+</div>

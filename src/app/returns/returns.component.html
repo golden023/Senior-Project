@@ -1,48 +1,55 @@
-<div class="pag">
+<div class="row">
   <h1>Online Returns</h1>
-
-  <h2>1. Retrieve Your Order</h2>
-
-  <form>
-
-    <div>
-      <label for="name">
-        Order Number:
-      </label>
-      <input id="name" type="text" formControlName="name">
-    </div>
-
-    <div>
-      <label for="address">
-        Order Email:
-      </label>
-      <input id="address" type="email" formControlName="address">
-
-    </div>
-
-    <button class="button" type="submit">Retrieve Order</button>
-
-  </form>
-
-  <br>
-  <br>
-  <br>
-  <h2>2. Choose A Reason For Return</h2>
-
-  <input type="radio" name="sort" value="Item Damanged"> Item Damaged<br>
-  <input type="radio" name="sort" value="Missing Products"> Missing Products<br>
-  <input type="radio" name="sort" value="Wrong Item Bought">Wrong Item Bought<br>
-  <input type="radio" name="sort" value="Order Placed By Mistake">Order Placed By Mistake<br>
-  <input type="radio" name="sort" value="Inaccurate Website Description">Inaccurate Website Description<br>
-
-  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <button class="button" type="submit">Create Return</button>
-
-  </form>
-  <br>
-  <br>
-  <br>
-  <a href="../assets/Return-Policy.docx"><strong><u>Return Policy</u></strong></a>
-
-
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-12">
+    <h3>1. Retrieve Your Order</h3>
+    <form [formGroup]="retrieveOrderForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="orderNum">Order Number:</label>
+        <input type="text" formControlName="orderNum" class="form-control" />
+        <div *ngIf="submitted && loginForm.controls['username'].hasError('required')" class="error-message"> Order
+          Number is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail Address</label>
+        <input type="email" formControlName="email" class="form-control" />
+        <div *ngIf="submitted && loginForm.controls['password'].hasError('required')" class="error-message"> E-mail
+          Address is required
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="button" type="submit">Retrieve Order</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <h3>2. Choose A Reason For Return</h3>
+    <form [formGroup]="returnReasonForm" (ngSubmit)="onSubmit()">
+      <div class="radio">
+        <input type="radio" name="damage"><label><span><span></span></span>Item Damaged</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="missing"><label><span><span></span></span>Missing Products</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="wrong"><label><span><span></span></span>Wrong Item Bought</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="mistake"><label><span><span></span></span>Order Placed By Mistake</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="inaccurate-description"><label><span><span></span></span>Inaccurate Website
+          Description</label>
+      </div>
+      <div class="form-group">
+        <label for="other">Other:</label>
+        <input type="other" formControlName="other" class="form-control">
+      </div>
+      <div class="form-group">
+        <button class="button" type="submit">Create Return</button>
+      </div>
+    </form>
+  </div>
 </div>
