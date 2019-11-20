@@ -29,7 +29,7 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li ngbDropdown class="nav-item dropdown" *ngIf="!currentUser">
+      <li ngbDropdown class="nav-item dropdown">
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <fa-icon icon="user"></fa-icon>
@@ -40,12 +40,6 @@
           <a (click)="setTitle( 'Everyday Kits | Account Registration' )" class="dropdown-item" routerLink="/register"
             routerLinkActive="active-link">Register</a>
         </div>
-      </li>
-      <li class="nav-item" *ngIf="currentUser">
-        <a (click)="setTitle( 'Everyday Kits | User Home' )" class="nav-link" routerLink="/userHome"
-          routerLinkActive="active-link">
-          <fa-icon icon="home"></fa-icon>
-        </a>
       </li>
       <li class="nav-item">
         <a (click)="setTitle( 'Everyday Kits | Favorites' )" class="nav-link" routerLink="#"
@@ -58,10 +52,6 @@
           routerLinkActive="active-link">
           <fa-icon icon="shopping-cart"></fa-icon>
         </a>
-      </li>
-      <li class="nav-item" *ngIf="currentUser">
-        <a (click)="logout()" class="nav-link" routerLink="/"
-        routerLinkActive="active-link">Logout {{this.currentUser.firstName}}</a>
       </li>
     </ul>
   </div>
@@ -102,7 +92,7 @@
         </ul>
       </div>
       <div class="col-md-3 mb-md-0 mb-3">
-        <h5>ABOUT US</h5>
+        <h5>INFORMATION</h5>
         <ul class="list-unstyled">
           <li>
             <a (click)="setTitle( 'About Everyday Kits' )" routerLink="/aboutus" routerLinkActive="active-link">About
@@ -111,6 +101,27 @@
           <li>
             <a (click)="setTitle( 'Everyday Kits | Frequently Asked Questions' )" routerLink="/faq"
               routerLinkActive="active-link">Frequently Asked Questions</a>
+          </li>
+          <li>
+            <a (click)="setTitle( 'Terms Of Service' )" routerLink="/terms" routerLinkActive="active-link">Terms Of Service</a>
+          </li>
+          <li>
+            <a (click)="setTitle( 'Privacy Policy' )" routerLink="/privacypolicy" routerLinkActive="active-link">Privacy Policy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5>QUICK LINKS</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a (click)="setTitle( 'My Account' )" routerLink="/userhome" routerLinkActive="active-link">My Account</a>
+          </li>
+          <li>
+            <a (click)="setTitle( 'Shipping Information' )" routerLink="/shippinginfo"
+              routerLinkActive="active-link">Shipping Information</a>
+          </li>
+          <li>
+            <a (click)="setTitle( 'Return Policy' )" routerLink="/returnpolicy" routerLinkActive="active-link">Return Policy</a>
           </li>
         </ul>
       </div>
