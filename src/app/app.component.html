@@ -43,11 +43,16 @@
                 routerLink="/register" routerLinkActive="active-link">Register</a>
             </div>
           </li>
-          <li class="nav-item" *ngIf="currentUser">
-            <a (click)="setTitle( 'Everyday Kits | User Home' )" class="nav-link" routerLink="/userHome"
-              routerLinkActive="active-link">
-              <fa-icon icon="home"></fa-icon>
+          <li ngbDropdown class="nav-item dropdown" *ngIf="currentUser">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <fa-icon icon="user"></fa-icon>
             </a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+              <a (click)="setTitle( 'Everyday Kits | My Account' )" class="dropdown-item" routerLink="/userHome"
+                routerLinkActive="active-link">My Account</a>
+              <a (click)="logout()" class="dropdown-item" routerLink="/" routerLinkActive="active-link">Logout</a>
+            </div>
           </li>
           <li class="nav-item">
             <a (click)="setTitle( 'Everyday Kits | Favorites' )" class="nav-link" routerLink="#"
@@ -60,10 +65,6 @@
               routerLinkActive="active-link">
               <fa-icon icon="shopping-cart"></fa-icon>
             </a>
-          </li>
-          <li class="nav-item" *ngIf="currentUser">
-            <a (click)="logout()" class="nav-link" routerLink="/" routerLinkActive="active-link">Logout
-              {{this.currentUser.firstName}}</a>
           </li>
         </ul>
       </div>
@@ -132,7 +133,7 @@
             <h5>QUICK LINKS</h5>
             <ul class="list-unstyled">
               <li>
-                <a (click)="setTitle( 'My Account' )" routerLink="/myaccount" routerLinkActive="active-link">My
+                <a (click)="setTitle( 'My Account' )" routerLink="/userHome" routerLinkActive="active-link">My
                   Account</a>
               </li>
               <li>

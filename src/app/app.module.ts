@@ -36,7 +36,6 @@ import { BirthdayComponent } from './birthday/birthday.component';
 import { TailgateComponent } from './tailgate/tailgate.component';
 import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
 import { TermsComponent } from './terms/terms.component';
-import { MyaccountComponent } from './myaccount/myaccount.component';
 
 
 
@@ -82,8 +81,7 @@ import { MyaccountComponent } from './myaccount/myaccount.component';
     BirthdayComponent,
     TailgateComponent,
     ReturnpolicyComponent,
-    TermsComponent,
-    MyaccountComponent
+    TermsComponent
   ],
   providers: [
     Title
