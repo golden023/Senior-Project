@@ -29,7 +29,7 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li ngbDropdown class="nav-item dropdown">
+      <li ngbDropdown class="nav-item dropdown" *ngIf="!currentUser">
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <fa-icon icon="user"></fa-icon>
@@ -40,6 +40,12 @@
           <a (click)="setTitle( 'Everyday Kits | Account Registration' )" class="dropdown-item" routerLink="/register"
             routerLinkActive="active-link">Register</a>
         </div>
+      </li>
+      <li class="nav-item" *ngIf="currentUser">
+        <a (click)="setTitle( 'Everyday Kits | User Home' )" class="nav-link" routerLink="/userHome"
+          routerLinkActive="active-link">
+          <fa-icon icon="home"></fa-icon>
+        </a>
       </li>
       <li class="nav-item">
         <a (click)="setTitle( 'Everyday Kits | Favorites' )" class="nav-link" routerLink="#"
@@ -52,6 +58,10 @@
           routerLinkActive="active-link">
           <fa-icon icon="shopping-cart"></fa-icon>
         </a>
+      </li>
+      <li class="nav-item" *ngIf="currentUser">
+        <a (click)="logout()" class="nav-link" routerLink="/"
+        routerLinkActive="active-link">Logout {{this.currentUser.firstName}}</a>
       </li>
     </ul>
   </div>
@@ -74,7 +84,7 @@
         </form>
       </div>
       <hr class="clearfix w-100 d-md-none pb-3">
-      <div class="col-md-3 mb-md-0 mb-3">
+      <div class="first">
         <h5>HOW CAN WE HELP?</h5>
         <ul class="list-unstyled">
           <li>
@@ -91,7 +101,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-3 mb-md-0 mb-3">
+      <div class="middle">
         <h5>INFORMATION</h5>
         <ul class="list-unstyled">
           <li>
@@ -110,11 +120,11 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-3 mb-md-0 mb-3">
+      <div class="last">
         <h5>QUICK LINKS</h5>
         <ul class="list-unstyled">
           <li>
-            <a (click)="setTitle( 'My Account' )" routerLink="/userhome" routerLinkActive="active-link">My Account</a>
+            <a (click)="setTitle( 'My Account' )" routerLink="/myaccount" routerLinkActive="active-link">My Account</a>
           </li>
           <li>
             <a (click)="setTitle( 'Shipping Information' )" routerLink="/shippinginfo"
