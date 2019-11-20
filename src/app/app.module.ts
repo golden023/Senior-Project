@@ -30,12 +30,16 @@ import { ReturnsComponent } from './returns/returns.component';
 import { VouchersComponent } from './vouchers/vouchers.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { TrackingComponent } from './tracking/tracking.component';
-import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
-import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
-import { TermsComponent } from './terms/terms.component';
 import { ShippinginfoComponent } from './shippinginfo/shippinginfo.component';
+import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 import { BirthdayComponent } from './birthday/birthday.component';
 import { TailgateComponent } from './tailgate/tailgate.component';
+import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
+import { TermsComponent } from './terms/terms.component';
+import { MyaccountComponent } from './myaccount/myaccount.component';
+
+
+
 
 @NgModule({
   imports: [
@@ -73,12 +77,13 @@ import { TailgateComponent } from './tailgate/tailgate.component';
     VouchersComponent,
     ContactusComponent,
     TrackingComponent,
-    ReturnpolicyComponent,
-    PrivacypolicyComponent,
-    TermsComponent,
     ShippinginfoComponent,
+    PrivacypolicyComponent,
     BirthdayComponent,
     TailgateComponent,
+    ReturnpolicyComponent,
+    TermsComponent,
+    MyaccountComponent
   ],
   providers: [
     Title
