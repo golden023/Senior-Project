@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 .page {
-  min-height: 600px;
-  width: 98.55%;
   margin-left: auto;
   margin-right: auto;
+  background-color: maroon;
+  min-height: 1000px;
+}
+.container {
+  background-color: white;
+  height: 100%;
+  min-height: 700px;
+  margin: auto;
 }
 h1 {
   text-transform: uppercase;
@@ -209,7 +215,7 @@ body {
 h3.modal-title {
   margin: auto;
 }
-.submit{
+.submit {
   display: block;
   font-size: 10px;
 }
