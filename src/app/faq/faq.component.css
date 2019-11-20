@@ -1,3 +1,9 @@
 .first {
   color: rgb(0, 0, 0);
 }
+h2 {
+  margin: 0px;
+}
+.e-accordion .e-acrdn-item .e-acrdn-header {
+  line-height: 12px;
+}
