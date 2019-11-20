@@ -1,7 +1,8 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { KIT } from '../_models/kit';
 import { KitsService } from '../_services';
-import { CartService } from '../_services/cart.service'
+import { CartService } from '../_services/cart.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-all',
@@ -16,7 +17,8 @@ export class AllComponent implements OnInit {
 
   constructor(
     private service: KitsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private titleService: Title
   ) { }
   ngOnInit(): void {
     this.getKits();
@@ -41,5 +43,8 @@ export class AllComponent implements OnInit {
   wishKit(KIT) {
     window.alert('Kit has been added to your wishlist');
     this.cartService.addToWishList(KIT);
+  }
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 }
