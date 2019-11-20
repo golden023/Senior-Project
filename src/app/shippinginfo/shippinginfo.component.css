@@ -1,14 +1,16 @@
-table {
+ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 50%;
+    margin: auto;
   }
-
-p {
-    width: 50%;
-}
-
 td, th {
-    text-align: left;
-    padding: 2px;
+    text-align: center;
+    padding: 6px;
+  } 
+  h2{
+    margin-left: 10px;
   }
+  p {
+    max-width: 95%;
+    margin-left: 20px;
+}
