@@ -17,6 +17,13 @@ import { VouchersComponent } from './vouchers/vouchers.component';
 import { ReturnsComponent } from './returns/returns.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ShippinginfoComponent } from './shippinginfo/shippinginfo.component';
+import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
+import { BirthdayComponent } from './birthday/birthday.component';
+import { TailgateComponent } from './tailgate/tailgate.component';
+import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
+import { TermsComponent } from './terms/terms.component';
+import { MyaccountComponent } from './myaccount/myaccount.component';
 
 const routes: Routes = [
   {
@@ -77,6 +84,34 @@ const routes: Routes = [
   {
     path: 'tracking',
     component: TrackingComponent
+  },
+  {
+    path: 'shippinginfo',
+    component: ShippinginfoComponent
+  },
+  {
+    path: 'privacypolicy',
+    component: PrivacypolicyComponent
+  },
+  {
+    path: 'birthday',
+    component: BirthdayComponent
+  },
+  {
+    path: 'tailgate',
+    component: TailgateComponent
+  },
+  {
+    path: 'returnpolicy',
+    component: ReturnpolicyComponent
+  },
+  {
+    path: 'terms',
+    component: TermsComponent
+  },
+  {
+    path: 'myaccount',
+    component: MyaccountComponent
   },
   {
     path: '',
