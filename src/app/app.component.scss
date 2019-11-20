@@ -46,7 +46,6 @@ h5 {
 /*navigation*/
 nav {
   display: flex;
-  width: 98.55%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -56,8 +55,7 @@ nav a {
   vertical-align: middle;
   font-size: .8em;
   text-align: center;
-  margin: auto;
-  padding: 5px;
+  padding-left: 5px;
 }
 nav a:hover {
   text-decoration: none;
@@ -65,16 +63,8 @@ nav a:hover {
 }
 .black {
   height: 15px;
-  display: flex;
-  width: 98.55%;
-  margin-left: auto;
-  margin-right: auto;
   background-color: black;
 }
-i {
-  background-color: mediumvioletred;
-}
-
 .dropdown-menu a:hover {
   background-color: maroon;
   color: white;
@@ -88,13 +78,17 @@ fa-icon {
 }
 .active-link {
   color: goldenrod;
+  text-decoration: none;
 }
-span.navbar-toggler-icon {
-  background-color: maroon;
-}
-span.navbar-toggler-icon:hover {
-  opacity: 0.8;
-}
+.custom-toggler.navbar-toggler { 
+  border-color: maroon; 
+} 
+/* Setting the stroke to green using rgb values (0, 128, 0) */ 
+
+.custom-toggler .navbar-toggler-icon { 
+  background-image: url( 
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128, 0, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+} 
 
 .first {
   margin-left: 1px;
@@ -110,3 +104,7 @@ span.navbar-toggler-icon:hover {
   margin-right: 2px;
 }
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+/*footer*/
+/* footer a:hover{
+  text-decoration: none;
+} */

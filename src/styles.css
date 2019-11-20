@@ -45,12 +45,13 @@ button {
 button:hover {
   opacity: 0.8;
 }
-a {
+footer a {
   text-decoration: none;
 }
 footer{
   margin-top: 7%;
 }
+
 /*Product pages*/
 .product-grid .product-discount-label,
 .product-grid .product-new-label {
