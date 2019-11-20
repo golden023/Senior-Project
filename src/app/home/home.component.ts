@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Title } from '@angular/platform-browser';
 
 import { KIT } from '../_models/kit';
 import { KitsService } from '../_services';
@@ -15,8 +16,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     config: NgbCarouselConfig,
-    private service: KitsService
-    ) {
+    private service: KitsService,
+    private titleService: Title
+  ) {
     config.interval = 3000; //delay
     config.wrap = true; //loop continuously
     config.keyboard = false; //can not be navigated by key board
@@ -32,5 +34,8 @@ export class HomeComponent implements OnInit {
         return (this.tkits = tkits);
       });
   };
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
 
 }
