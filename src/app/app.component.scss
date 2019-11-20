@@ -95,4 +95,18 @@ span.navbar-toggler-icon {
 span.navbar-toggler-icon:hover {
   opacity: 0.8;
 }
+
+.first {
+  margin-left: 1px;
+  margin-right: 5px;
+}
+
+.middle {
+  margin-left: 15px;
+}
+
+.last {
+  margin-left: 15px;
+  margin-right: 2px;
+}
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
