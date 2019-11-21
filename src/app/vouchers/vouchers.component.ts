@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { KIT } from '../_models/kit';
+import { CartService } from '../_services/cart.service';
 
 @Component({
   selector: 'app-vouchers',
@@ -8,13 +9,13 @@ import { KIT } from '../_models/kit';
 })
 export class VouchersComponent implements OnInit {
   kit: KIT[];
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit() {
   }
-
-  addToCart(KIT) {
-    window.alert('Your kit has been added to the cart!');
-  }
-
+  /* addToCart() {
+    this.cartService.addToCart();
+  } */
 }
