@@ -1,58 +1,33 @@
-<div class="container">
-    <div class="row">
-        <h1>ALL KITS</h1>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <form name="filters">
-                <h2>Sort by</h2>
-                <input type="radio" name="sort" value="Popular"> Popular<br>
-                <input type="radio" name="sort" value="New"> New<br>
-                <input type="radio" name="sort" value="Top"> Top Rated<br>
-                <input type="radio" name="sort" value="asc"> Item Name (A-Z)<br>
-                <input type="radio" name="sort" value="desc"> Item Name(Z-A)<br>
-                <input type="radio" name="sort" value="price-up"> Price (Low - High)<br>
-                <input type="radio" name="sort" value="price-down"> Price (High - Low)<br>
-                <h2>Filter by</h2>
-                <h3>Special Offers</h3>
-                <input type="radio" name="special" value="new"> New<br>
-                <input type="radio" name="special" value="sale"> Sale<br>
-                <h3>Price</h3>
-                <input type="radio" name="price" value="$"> $10 - $20<br>
-                <input type="radio" name="price" value="$$"> $20 - $50<br>
-                <input type="radio" name="price" value="$$$"> $50 - $100<br>
-                <input type="radio" name="price" value="$$$"> $100+<br>
-                <input type="submit" value="Clear">
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <div class="col-md-9">
-            <div class="row">
-                <div class="col-md-3 col-sm-6" *ngFor="let kit of kits">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a class="kit-page" data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
-                                <img src={{kit.Image}}>
-                            </a>
-                            <ul class="social">
-                                <li><a data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
-                                        <i class="fas fa-eye"></i>
-                                    </a></li>
-                                <li><a data-tip="Add to Wishlist" data-target="#product-view" (click)="wishKit(kit)">
-                                        <i class='fas fa-heart'></i>
-                                    </a></li>
-                            </ul>
-                            <span class="product-new-label">{{kit.NewFlag}}</span>
-                            <span class="product-discount-label">-{{kit.Discount | percent}}</span>
+<div class="row">
+    <h1>ALL KITS</h1>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" *ngFor="let kit of kits">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a [routerLink]="['/kitPage',kit.KitID]" class="kit-page">
+                            <img src={{kit.Image}}>
+                        </a>
+                        <ul class="social">
+                            <li><a data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
+                                    <i class="fas fa-eye"></i>
+                                </a></li>
+                            <li><a data-tip="Add to Wishlist" data-target="#product-view" (click)="wishKit(kit)">
+                                    <i class='fas fa-heart'></i>
+                                </a></li>
+                        </ul>
+                        <span class="product-new-label">{{kit.NewFlag}}</span>
+                        <span class="product-discount-label">-{{kit.Discount | percent}}</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title">{{kit.KitName}}</h3>
+                        <div class="price">
+                            {{kit.PriceDis | currency }}
+                            <span>{{kit.Price | currency }}</span>
                         </div>
-                        <div class="product-content">
-                            <h3 class="title">{{kit.KitName}}</h3>
-                            <div class="price">
-                                {{kit.PriceDis | currency }}
-                                <span>{{kit.Price | currency }}</span>
-                            </div>
-                            <button (click)="addToCart(kit)">Add to Cart</button>
-                        </div>
+                        <button (click)="addToCart(kit)">Add to Cart</button>
                     </div>
                 </div>
             </div>

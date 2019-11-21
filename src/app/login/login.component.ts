@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService, AuthenticationService } from '../_services';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -25,9 +26,10 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private alertService: AlertService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private titleService: Title
   ) {
-    
+
   }
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
@@ -66,5 +68,8 @@ export class LoginComponent implements OnInit {
           this.alertService.error('Invalid email and/or password. Please try again.');
           this.loading = false;
         });
+  }
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 }

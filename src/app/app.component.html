@@ -5,7 +5,7 @@
     <nav class="navbar navbar-expand-md">
       <a (click)="setTitle( 'Everyday Kits | Events Made Easy' )" routerLink="/home" routerLinkActive="active-link"><img
           width="150" alt="Site Logo" src="../assets/tempLogo.png" /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+      <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,11 +43,16 @@
                 routerLink="/register" routerLinkActive="active-link">Register</a>
             </div>
           </li>
-          <li class="nav-item" *ngIf="currentUser">
-            <a (click)="setTitle( 'Everyday Kits | User Home' )" class="nav-link" routerLink="/userHome"
-              routerLinkActive="active-link">
-              <fa-icon icon="home"></fa-icon>
+          <li ngbDropdown class="nav-item dropdown" *ngIf="currentUser">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <fa-icon icon="user"></fa-icon>
             </a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+              <a (click)="setTitle( 'Everyday Kits | My Account' )" class="dropdown-item" routerLink="/userHome"
+                routerLinkActive="active-link">My Account</a>
+              <a (click)="logout()" class="dropdown-item" routerLink="/" routerLinkActive="active-link">Logout</a>
+            </div>
           </li>
           <li class="nav-item">
             <a (click)="setTitle( 'Everyday Kits | Favorites' )" class="nav-link" routerLink="#"
@@ -60,10 +65,6 @@
               routerLinkActive="active-link">
               <fa-icon icon="shopping-cart"></fa-icon>
             </a>
-          </li>
-          <li class="nav-item" *ngIf="currentUser">
-            <a (click)="logout()" class="nav-link" routerLink="/" routerLinkActive="active-link">Logout
-              {{this.currentUser.firstName}}</a>
           </li>
         </ul>
       </div>
@@ -115,11 +116,11 @@
                   Everyday Kits</a>
               </li>
               <li>
-                <a (click)="setTitle( 'Everyday Kits | Frequently Asked Questions' )" routerLink="/faq"
-                  routerLinkActive="active-link">Frequently Asked Questions</a>
+                <a (click)="setTitle( 'Frequently Asked Questions' )" routerLink="/faq"
+                  routerLinkActive="active-link">FAQs</a>
               </li>
               <li>
-                <a (click)="setTitle( 'Terms Of Service' )" routerLink="/terms" routerLinkActive="active-link">Terms Of
+                <a (click)="setTitle( 'Terms of Service' )" routerLink="/terms" routerLinkActive="active-link">Terms of
                   Service</a>
               </li>
               <li>
@@ -132,7 +133,7 @@
             <h5>QUICK LINKS</h5>
             <ul class="list-unstyled">
               <li>
-                <a (click)="setTitle( 'My Account' )" routerLink="/myaccount" routerLinkActive="active-link">My
+                <a (click)="setTitle( 'My Account' )" routerLink="/userHome" routerLinkActive="active-link">My
                   Account</a>
               </li>
               <li>

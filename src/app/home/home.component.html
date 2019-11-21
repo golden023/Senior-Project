@@ -14,55 +14,42 @@
 <div class="row">
     <div class="col-lg-4 col-sm-12">
         <a href="#" class="card">
-            <img class="card-img-top" src="../assets/images/CustomBirthday.png" alt="">
+            <a (click)="setTitle( 'Personalize For Birthday' )" routerLink="/birthday" routerLinkActive="active-link">
+                <img class="card-img-top" src="../assets/images/CustomBirthday.png" alt=""></a>
             <div class="card-body">
-                <h4 class="card-title">Personalize for Birthday</h4>
+                <h4 class="card-title"> <a (click)="setTitle( 'Personalize For Birthday' )" routerLink="/birthday"
+                        routerLinkActive="active-link">Personalize For Birthday
+                    </a></h4>
                 <p class="card-text">Customize your birthday kit with various colors!</p>
             </div>
         </a>
     </div>
-    <div class="row">
-        <div class="col-lg-4 col-sm-12">
-            <a href="#" class="card">
-                <a (click)="setTitle( 'Personalize For Birthday' )" routerLink="/birthday"
-                    routerLinkActive="active-link"> <img class="card-img-top" src="../assets/images/CustomBirthday.png"
-                        alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title"> <a (click)="setTitle( 'Personalize For Birthday' )" routerLink="/birthday"
-                            routerLinkActive="active-link">
-                            <font color="maroon">Personalize For Birthday</font>
-                        </a></h4>
-                    <p class="card-text">Customize your birthday kit with various colors!</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-            <a href="#" class="card">
-                <a (click)="setTitle( 'Custom Request' )" routerLink="/contactus" routerLinkActive="active-link"> <img
-                        class="card-img-top" src="../assets/images/CustomRequest.png" alt=""> </a>
-                <div class="card-body">
-                    <h4 class="card-title"> <a (click)="setTitle( 'Custom Request' )" routerLink="/contactus"
-                            routerLinkActive="active-link">
-                            <font color="maroon">Custom Request</font>
-                        </a></h4>
-                    <p class="card-text">Is there something not listed on the website that you want order?</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-            <a href="#" class="card">
-                <a (click)="setTitle( 'Get Your Tailgate On' )" routerLink="/tailgate" routerLinkActive="active-link">
-                    <img class="card-img-top" src="../assets/images/TailgateOffer.png" alt=""> </a>
-                <div class="card-body">
-                    <h4 class="card-title"> <a (click)="setTitle( 'Get Your Tailgate On' )" routerLink="/tailgate"
-                            routerLinkActive="active-link">
-                            <font color="maroon">Get Your Tailgate On</font>
-                        </a></h4>
-                    <p class="card-text">This football season get your tailgate on in style with our Tailgte kit.</p>
-                </div>
-            </a>
-        </div>
+    <div class="col-lg-4 col-sm-12">
+        <a href="#" class="card">
+            <a (click)="setTitle( 'Contact Us' )" routerLink="/contactus" routerLinkActive="active-link"> <img
+                    class="card-img-top" src="../assets/images/CustomRequest.png" alt=""> </a>
+            <div class="card-body">
+                <h4 class="card-title"> <a (click)="setTitle( 'Custom Request' )" routerLink="/contactus"
+                        routerLinkActive="active-link">Custom Request
+                    </a></h4>
+                <p class="card-text">Is there something not listed on the website that you want order?</p>
+            </div>
+        </a>
     </div>
+    <div class="col-lg-4 col-sm-12">
+        <a href="#" class="card">
+            <a (click)="setTitle( 'Get Your Tailgate On' )" routerLink="/tailgate" routerLinkActive="active-link">
+                <img class="card-img-top" src="../assets/images/TailgateOffer.png" alt=""> </a>
+            <div class="card-body">
+                <h4 class="card-title"> <a (click)="setTitle( 'Get Your Tailgate On' )" routerLink="/tailgate"
+                        routerLinkActive="active-link">Get Your Tailgate On
+                    </a></h4>
+                <p class="card-text">This football season get your tailgate on in style with our Tailgate kit.</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="row">
     <h3>Top Kits</h3>
     <div class="row">
         <div class="col-lg-3 col-sm-6" *ngFor="let kit of tkits">
@@ -76,16 +63,4 @@
             </div>
         </div>
     </div>
-    <h3>Top Kits</h3>
-    <div class="row">
-        <div class="col-lg-3 col-sm-6" *ngFor="let kit of tkits">
-            <div class="thumbnail">
-                <a [routerLink]="['/kitPage',kit.KitID]">
-                    <img src="{{kit.Image}}" alt="Nature" style="width:100%">
-                    <div class="caption">
-                        <p>{{kit.KitName}}</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+</div>
