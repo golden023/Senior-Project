@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-7">
       <div class="cart row">CART ({{totalQnt}})</div>
-      <div class="row shadow p-3 mb-5 bg-white rounded" *ngFor="let item of lkit">
+      <div class="cartitem row shadow p-3 mb-5 bg-white rounded" *ngFor="let item of lkit">
         <app-cart-item-detail [kit]="item" (editedEmitter)="ngOnInit()"></app-cart-item-detail>
       </div>
     </div>

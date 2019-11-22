@@ -64,6 +64,7 @@
           <li class="nav-item" *ngIf="currentUser">
             <a (click)="logout()" class="nav-link" routerLink="/" routerLinkActive="active-link">Logout
               {{this.currentUser.firstName}}</a>
+            <div>Debug: {{currentServer}}</div>    
           </li>
         </ul>
       </div>

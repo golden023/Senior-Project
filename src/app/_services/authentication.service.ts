@@ -10,6 +10,7 @@ import { R3ResolvedDependencyType } from '@angular/compiler';
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
+  public currentServer: String;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -35,4 +36,9 @@ export class AuthenticationService {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
+
+  getServer(){
+    return this.http.get(`http://localhost:5000/sql`, {responseType: 'text'});
+  }
+  
 }

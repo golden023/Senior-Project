@@ -8,6 +8,14 @@
     margin-top: 25px;
     font-size: 35px;
   }
+  .col-container {
+    display: flex;
+    width: 100%;
+  }
+  .col {
+    flex: 1;
+    padding: 16px;
+  }
 
   .item {
     height: auto;
