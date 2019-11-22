@@ -53,5 +53,8 @@ export class CartMainComponent implements OnInit, OnChanges {
     });
     return totalQnt;
   }
+  clearCart(){
+    this.lkit = this.cartService.clearCart();
+  }
 }
 
