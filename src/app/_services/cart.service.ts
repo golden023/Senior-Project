@@ -39,7 +39,7 @@ export class CartService {
   }
 
   purchase(kit: KIT[]){
-    return this.http.post(`http://localhost:5000/purchase`, kit);
+    return this.http.post(`http://3.135.129.218:5000/purchase`, kit);
   }
 
 

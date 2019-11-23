@@ -37,6 +37,7 @@ export class SaleComponent implements OnInit {
     this.cartService.addToCart(KIT);
   }
   wishKit(KIT) {
+    window.alert('Kit has been added to your wishlist');
     this.cartService.addToWishList(KIT);
   }
 } 

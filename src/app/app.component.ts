@@ -9,8 +9,9 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   currentUser: User;
+  currentServer;
   users = [];
 
   constructor(
@@ -20,7 +21,10 @@ export class AppComponent {
   ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
-  
+  ngOnInit(): void {
+    this.authenticationService.getServer().subscribe(server => this.currentServer = server);
+    console.log("Debug" + this.authenticationService.getServer());
+  }
 
   title = 'senior-project';
 
@@ -30,6 +34,10 @@ export class AppComponent {
   }
   public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
+  }
+
+  getserver() {
+    return this.authenticationService.getServer();
   }
 }
 

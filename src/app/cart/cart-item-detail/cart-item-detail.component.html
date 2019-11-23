@@ -1,13 +1,13 @@
 <div class='container'>
-    <div class='row'>
-        <div class='col'>
+    <div class='cart row'>
+        <div class='col-3'>
             <img src={{kit.Image}}>
         </div>
-        <div class='col'>
+        <div class='cart col-2'>
             <p>{{kit.KitName}}</p>
             <div>{{kit.KitID}}</div>
         </div>
-        <div class="col">
+        <div class="cart col-5">
             <span class="input-group border border-dark">
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default btn-number" (click)="subOne();">
@@ -23,7 +23,7 @@
                 </span>
             </span>
         </div>
-        <div class='price col'>
+        <div class='cart price col-2'>
             <div>{{kit.PriceDis | currency}}</div>
         </div>
     </div>

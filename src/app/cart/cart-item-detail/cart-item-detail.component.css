@@ -11,3 +11,12 @@ img {
     text-align: right;
 
 }
+
+.col-container {
+    display: flex;
+    width: 100%;
+  }
+  .col {
+    flex: 1;
+    padding: 16px;
+  }

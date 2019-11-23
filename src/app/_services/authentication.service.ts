@@ -10,6 +10,7 @@ import { R3ResolvedDependencyType } from '@angular/compiler';
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
+  public currentServer: String;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -21,7 +22,7 @@ export class AuthenticationService {
   }
 
   login(username, password):Observable<User> {
-    return this.http.post<User>(`http://localhost:5000/authenticate`, { username, password })
+    return this.http.post<User>(`http://3.135.129.218:5000/authenticate`, { username, password })
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
@@ -35,4 +36,9 @@ export class AuthenticationService {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
+
+  getServer(){
+    return this.http.get(`http://3.135.129.218:5000/sql`, {responseType: 'text'});
+  }
+  
 }

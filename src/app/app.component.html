@@ -66,6 +66,10 @@
               <fa-icon icon="shopping-cart"></fa-icon>
             </a>
           </li>
+          <li class="nav-item" *ngIf="currentUser">
+            <a (click)="logout()" class="nav-link" routerLink="/" routerLinkActive="active-link">Logout
+              {{this.currentUser.firstName}}</a>   
+          </li>
         </ul>
       </div>
     </nav>
