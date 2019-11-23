@@ -11,7 +11,9 @@ import { KIT } from '../_models/kit';
   styleUrls: ['./wishlist.component.css']
 })
 export class WishlistComponent implements OnInit {
-
+  currentUser: User;
+  users: User[];
+  wish: KIT[];
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,

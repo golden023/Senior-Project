@@ -23,6 +23,7 @@ import { BirthdayComponent } from './birthday/birthday.component';
 import { TailgateComponent } from './tailgate/tailgate.component';
 import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
 import { TermsComponent } from './terms/terms.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -116,6 +117,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartMainComponent
+  },
+  {
+    path: 'wishlist',
+    component: WishlistComponent
   },
   {
     path: 'checkout',
