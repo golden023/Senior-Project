@@ -27,7 +27,6 @@ export class SaleComponent implements OnInit {
       });
   };
   addToCart(KIT) {
-    window.alert('Your kit has been added to the cart!');
     this.cartService.addToCart(KIT);
   }
   openKit(KIT): void {

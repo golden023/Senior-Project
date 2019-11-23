@@ -23,7 +23,7 @@ import { BirthdayComponent } from './birthday/birthday.component';
 import { TailgateComponent } from './tailgate/tailgate.component';
 import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
 import { TermsComponent } from './terms/terms.component';
-import { MyaccountComponent } from './myaccount/myaccount.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -110,10 +110,6 @@ const routes: Routes = [
     component: TermsComponent
   },
   {
-    path: 'myaccount',
-    component: MyaccountComponent
-  },
-  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -121,6 +117,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartMainComponent
+  },
+  {
+    path: 'wishlist',
+    component: WishlistComponent
   },
   {
     path: 'checkout',

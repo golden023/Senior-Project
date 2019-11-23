@@ -6,7 +6,7 @@
     background-color: none;
     color: black;
     margin-top: 25px;
-    font-size: 35px;
+    font-size: 24px;
   }
   .col-container {
     display: flex;
@@ -27,12 +27,12 @@
   }
 
   .total {
-    font-size: 17px;
+    font-size: small;
     word-wrap: break-word;
   }
 
   .totalQnt{
-    font-size: 17px;
+    font-size: small;
     word-wrap: break-word;
   }
 
@@ -59,4 +59,8 @@
   a:hover {
     text-decoration: none;
     color: maroon;
+  }
+
+  button {
+    margin-left: 5px;
   }
