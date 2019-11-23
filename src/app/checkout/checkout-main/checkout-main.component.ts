@@ -3,6 +3,8 @@ import { CartService } from '../../_services/cart.service'
 import { KIT, TOTALS } from '../../_models/kit';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertService } from '../../_services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-main',
@@ -23,18 +25,23 @@ export class CheckoutMainComponent implements OnInit {
   name: string;
   submitted = false;
   loading = false;
+  poNum;
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private cartService: CartService,
     private route:ActivatedRoute,
+    private alertService: AlertService
   ) { 
     this.lkit = this.cartService.getItem();
+    this.poNum = this.cartService.getPO();
   }
 
   ngOnInit() {
     this.lkit = this.cartService.getItem();
     this.totals = this.getTotals(this.lkit);
+    this.getPO();
 
     this.customerForm = this.formBuilder.group({
       email: ['', Validators.required],
@@ -43,6 +50,7 @@ export class CheckoutMainComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       shippingAdd: ['', Validators.required]
     });
+    console.log(this.lkit);
   }
 
   f(){
@@ -76,15 +84,30 @@ export class CheckoutMainComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
+    console.log("PO NUmber")
+    console.log(this.poNum);
     // stop here if form is invalid
     if (this.customerForm.invalid) {
       return;
     }
-
+    
     this.loading = true;
-    this.cartService.purchase(this.lkit)
+    this.cartService.purchase(this.customerForm.value, this.lkit, this.poNum)
       .pipe()
-      .subscribe();
+      .subscribe(
+        data => {
+          this.alertService.success('Purchase successful', true);
+          this.router.navigate(['/']);
+        },
+        error => {
+          this.alertService.error(error);
+          this.loading = false;
+        });
+  }
+
+  getPO(){
+    this.cartService.getPO().subscribe(ponum => {
+      return (this.poNum = ponum);
+    })
   }
 }

@@ -11,6 +11,20 @@ export interface KIT {
     Description: string
 }
 
+export interface CUSTOMER {
+    email: string,
+    firstName: string,
+    lastName: string,
+    phoneNumber: string,
+    shippingAdd: string
+}
+
+export interface PURCHASE {
+    customer: CUSTOMER,
+    kit: KIT[],
+    ponum: Number
+}
+
 export interface TOTALS {
     subtotal: number,
     totalQnt: number,

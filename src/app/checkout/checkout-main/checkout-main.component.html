@@ -4,31 +4,31 @@
             <label for="exampleInputEmail1">CUSTOMER</label>
         </div>
         <form [formGroup]="this.customerForm" (ngSubmit)="onSubmit()">
-            <div class='row'>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <div class='row form-group'>
+                <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                     placeholder="Enter email">
             </div>
 
             <mat-divider></mat-divider>
             <div class='row'>SHIPPING ADDRESS</div>
             <div class="row">
-                <div class='col'>
-                    <input class="form-control form-control-lg" type="text" placeholder="First Name">
+                <div class='col form-group'>
+                    <input class="form-control form-control-lg" formControlName="firstName" type="text" placeholder="First Name">
                 </div>
-                <div class='col'>
-                    <input class="form-control form-control-lg" type="text" placeholder="Last Name">
+                <div class='col form-group'>
+                    <input class="form-control form-control-lg" formControlName="lastName" type="text" placeholder="Last Name">
                 </div>
             </div>
-            <div class='row'>
-                <input class="form-control form-control-lg" type="text" placeholder="Contact Phone Number">
+            <div class='row form-group'>
+                <input class="form-control form-control-lg" formControlName="phoneNumber" type="text" placeholder="Contact Phone Number">
             </div>
-            <div class='row'>
-                <input class="form-control form-control-lg" type="text" placeholder="Shipping Address">
+            <div class='row form-group'>
+                <input class="form-control form-control-lg" formControlName="shippingAdd" type="text" placeholder="Shipping Address">
             </div>
 
             <mat-divider></mat-divider>
             <div class='row'>PAYMENT</div>
-            <div class='row'>
+            <div class='row form-group'>
                 <input class="form-control form-control-lg" type="text" placeholder="Paypal">
             </div>
             <div class="form-group">
