@@ -1,28 +1,22 @@
-<div class="container page">
-  <div class="row">
-    <div class="col-12">
-      <h1>Hi {{this.currentUser.firstName}}</h1>
-    </div>
-    <div class="row">
-      <h1>WISH LIST</h1>
-    </div>
-    <div class="row shadow p-3 mb-5 bg-white rounded" *ngFor="let kit of wish">
-      <div class='col'>
-        <img src={{kit.Image}}>
-      </div>
-      <div class='col'>
-        <p>{{kit.KitName}}</p>
-        <div>{{kit.KitID}}</div>
-      </div>
-      <div class='price col'>
-        <div>{{kit.PriceDis | currency}}</div>
-      </div>
-    </div>
-  </div>
+<div class="row">
+  <h1>Hi {{this.currentUser.firstName}}</h1>
 </div>
 <div>
-<h2>Account Information</h2>
-<p>FirstName: {{this.currentUser.firstName}}</p>
-<p>Lastname:  {{this.currentUser.lastName}} </p>
-<p>Email:  {{this.currentUser.username}}</p>
+  <h2>Account Information</h2>
+  <p>FirstName: {{this.currentUser.firstName}}</p>
+  <p>Lastname: {{this.currentUser.lastName}} </p>
+  <p>Email: {{this.currentUser.username}}</p>
+  <h2>WISH LIST</h2>
+</div>
+<div class="row shadow p-3 mb-5 bg-white rounded" *ngFor="let kit of wish">
+  <div class='col'>
+    <img src={{kit.Image}}>
+  </div>
+  <div class='col'>
+    <p>{{kit.KitName}}</p>
+    <div>{{kit.KitID}}</div>
+  </div>
+  <div class='price col'>
+    <div>{{kit.PriceDis | currency}}</div>
+  </div>
 </div>
