@@ -23,20 +23,7 @@ export class WishlistComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadAllUsers();
     this.wish = this.cartService.getWishList();
-  }
-
-  deleteUser(id: number) {
-    this.userService.delete(id)
-      .pipe(first())
-      .subscribe(() => this.loadAllUsers());
-  }
-
-  private loadAllUsers() {
-    this.userService.getAll()
-      .pipe(first())
-      .subscribe(users => this.users = users);
   }
 
 }

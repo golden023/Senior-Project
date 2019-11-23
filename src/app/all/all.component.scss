@@ -2,6 +2,20 @@
   margin: auto;
   width: 98.55%;
 }
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+.row > [class*='col-'] {
+	 display: flex;
+	 flex-direction: column;
+}
+.col.bottom {
+  position:absolute;
+  bottom:0;
+}
 form h3 {
   text-align: left;
   color: black;

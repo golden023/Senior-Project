@@ -8,6 +8,7 @@ export interface KIT {
     NewFlag: string,
     DefaultQnt: number,
     ShippingCost: number,
+    Description: string
 }
 
 export interface TOTALS {
