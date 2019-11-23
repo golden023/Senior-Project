@@ -16,27 +16,27 @@ export class KitsService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://localhost:5000/kits')
+    return this.http.get<KIT[]>('http://3.135.129.218:5000/kits')
       .pipe();
   }
 
   getEventKits(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://localhost:5000/eventkits')
+    return this.http.get<KIT[]>('http://3.135.129.218:5000/eventkits')
       .pipe();
   }
 
   getGiftKits(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://localhost:5000/giftkits')
+    return this.http.get<KIT[]>('http://3.135.129.218:5000/giftkits')
       .pipe();
   }
 
   getSaleKits(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://localhost:5000/salekits')
+    return this.http.get<KIT[]>('http://3.135.129.218:5000/salekits')
       .pipe();
   }
 
   getTopKits(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://localhost:5000/topkits')
+    return this.http.get<KIT[]>('http://3.135.129.218:5000/topkits')
       .pipe();
   }
 
@@ -44,7 +44,7 @@ export class KitsService {
     const options = kitID ?
       { params: new HttpParams().set('kitID', kitID) } : {};
 
-    return this.http.get<KIT[]>(`http://localhost:5000/singlekit`, options)
+    return this.http.get<KIT[]>(`http://3.135.129.218:5000/singlekit`, options)
       .pipe();
   }
 }

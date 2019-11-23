@@ -22,7 +22,7 @@ export class AuthenticationService {
   }
 
   login(username, password):Observable<User> {
-    return this.http.post<User>(`http://localhost:5000/authenticate`, { username, password })
+    return this.http.post<User>(`http://3.135.129.218:5000/authenticate`, { username, password })
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
@@ -38,7 +38,7 @@ export class AuthenticationService {
   }
 
   getServer(){
-    return this.http.get(`http://localhost:5000/sql`, {responseType: 'text'});
+    return this.http.get(`http://3.135.129.218:5000/sql`, {responseType: 'text'});
   }
   
 }
