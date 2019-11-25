@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../_services/cart.service'
 import { KIT, TOTALS } from '../../_models/kit';
 import { ActivatedRoute } from '@angular/router';
@@ -37,10 +37,10 @@ export class CheckoutMainComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private cartService: CartService,
-    private route:ActivatedRoute,
+    private route: ActivatedRoute,
     private alertService: AlertService,
     private authenticationService: AuthenticationService,
-  ) { 
+  ) {
     this.lkit = this.cartService.getItem();
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
@@ -61,23 +61,23 @@ export class CheckoutMainComponent implements OnInit {
 
   }
 
-  f(){
+  f() {
     return this.customerForm.controls;
   }
 
-  getTotals(lkit){
+  getTotals(lkit) {
     var totals: TOTALS;
     var subtotal = 0;
     var taxes = 0;
     var shipping = 0;
     var totalQnt = 0;
     var total = 0;
-    
-    lkit.forEach(function(element: KIT){
+
+    lkit.forEach(function (element: KIT) {
       shipping = shipping + element.ShippingCost;
       totalQnt = totalQnt + element.DefaultQnt;
-      taxes = taxes + (element.PriceDis*0.07);
-      subtotal = subtotal + (element.PriceDis*element.DefaultQnt);
+      taxes = taxes + (element.PriceDis * 0.07);
+      subtotal = subtotal + (element.PriceDis * element.DefaultQnt);
     });
     total = shipping + taxes + subtotal;
     totals = {
@@ -92,21 +92,20 @@ export class CheckoutMainComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
- 
+
     // stop here if form is invalid
     if (this.customerForm.invalid) {
       return;
     }
 
-    if (this.currentUser){
+    if (this.currentUser) {
       this.userID = this.currentUser.id;
-    } else
-    {
+    } else {
       this.userID = 0;
     }
-    for (var kit of this.lkit){
+    for (var kit of this.lkit) {
       console.log("Purchasedetail " + kit.KitName)
-      this.cartService.purchasedetail(kit.KitID,kit.KitName,this.poNum)
+      this.cartService.purchasedetail(kit.KitID, kit.KitName, this.poNum)
         .pipe()
         .subscribe(
           data => {
@@ -117,10 +116,10 @@ export class CheckoutMainComponent implements OnInit {
             this.loading = false;
           });
     }
-    
+
     this.loading = true;
 
-      this.cartService.purchase(this.customerForm.value, this.poNum, this.userID)
+    this.cartService.purchase(this.customerForm.value, this.poNum, this.userID)
       .pipe()
       .subscribe(
         data => {
@@ -130,10 +129,13 @@ export class CheckoutMainComponent implements OnInit {
         error => {
           this.alertService.error(error);
           this.loading = false;
-        });    
+        });
+    this.clearCart();
   }
-
-  getPO(){
+  clearCart() {
+    this.cartService.clearCart();
+  }
+  getPO() {
     this.cartService.getPO().subscribe(ponum => {
       return (this.poNum = ponum);
     })
