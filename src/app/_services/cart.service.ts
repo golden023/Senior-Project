@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { KIT, CUSTOMER, PURCHASE } from '../_models/kit'
-import { HttpClient } from '@angular/common/http';
+import { KIT, CUSTOMER, PURCHASE, ORDERDETAIL, PURCHASEINFO } from '../_models/kit'
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
 import { Observable } from 'rxjs';
@@ -13,10 +13,10 @@ export class CartService {
   wishlist = [];
   data : PURCHASE;
   customer : CUSTOMER;
+  orderdetail : ORDERDETAIL;
+  orders: PURCHASEINFO[];
 
-  constructor(private http: HttpClient) { 
-    //this.wishlist = JSON.parse(localStorage.getItem('kit'));
-  } 
+  constructor(private http: HttpClient) {} 
 
   addToCart(kit) {
     this.items.push(kit);
@@ -47,24 +47,34 @@ export class CartService {
     return this.wishlist;
   }
 
-  purchase(Customer, Kit: KIT[], poNum){
+  purchase(Customer, poNum, userID){
     const customer: CUSTOMER = Customer;
-    const kit: KIT[] = Kit;
     const ponum: Number = poNum;
+    const userid: Number = userID;
     var data: PURCHASE;
-    JSON.stringify(kit);
+
     data = {
       customer,
-      kit,
-      ponum
+      ponum,
+      userid
     }
-    console.log("SERVICE RUNNING")
-    console.log(kit);
-    console.log(data);
     return this.http.post(`http://3.135.129.218:5000/purchase`, data);
+  }
+  purchasedetail(kitid, kitname, ponum){
+    console.log("Purchaseservie")
+    return this.http.post(`http://3.135.129.218:5000/purchasedetail`, {ponum, kitname, kitid});
   }
   getPO(): Observable<number> {
     return this.http.get<number>('http://3.135.129.218:5000/poNum')
       .pipe();
   }
+  getOrders(userID: string): Observable<PURCHASEINFO[]> {
+    const options = userID ?
+      { params: new HttpParams().set('userID', userID) } : {};
+
+    return this.http.get<PURCHASEINFO[]>(`http://3.135.129.218:5000/getOrders`, options)
+      .pipe();
+  }
+
+
 }

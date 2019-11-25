@@ -21,8 +21,20 @@ export interface CUSTOMER {
 
 export interface PURCHASE {
     customer: CUSTOMER,
-    kit: KIT[],
-    ponum: Number
+    ponum: Number,
+    userid: Number
+}
+
+export interface PURCHASEINFO {
+    OrderID: number,
+    OrderDate: Date,
+    KitName: string
+}
+
+export interface ORDERDETAIL {
+    ponum: Number,
+    kitname: String,
+    kitid: String
 }
 
 export interface TOTALS {

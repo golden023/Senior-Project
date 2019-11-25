@@ -1,6 +1,6 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { KIT } from '../_models/kit';
-import { KitsService } from '../_services';
+import { KitsService, AuthenticationService } from '../_services';
 import { CartService } from '../_services/cart.service';
 
 @Component({
@@ -12,14 +12,17 @@ import { CartService } from '../_services/cart.service';
 export class GiftComponent implements OnInit {
   gkits: KIT[];
   openkit: KIT;
+  currentServer;
 
   constructor(
     private service: KitsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
     this.getKits();
+    this.authenticationService.getServer().subscribe(server => this.currentServer = server);
   }
   getKits(): void {
     this.service.getGiftKits()

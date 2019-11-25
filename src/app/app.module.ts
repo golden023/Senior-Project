@@ -32,11 +32,10 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { ShippinginfoComponent } from './shippinginfo/shippinginfo.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
-import { BirthdayComponent } from './birthday/birthday.component';
-import { TailgateComponent } from './tailgate/tailgate.component';
 import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
 import { TermsComponent } from './terms/terms.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { MyaccountComponent } from './myaccount/myaccount.component';
 
 
 
@@ -79,11 +78,10 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     TrackingComponent,
     ShippinginfoComponent,
     PrivacypolicyComponent,
-    BirthdayComponent,
-    TailgateComponent,
     ReturnpolicyComponent,
     TermsComponent,
-    WishlistComponent
+    WishlistComponent,
+    MyaccountComponent
   ],
   providers: [
     Title

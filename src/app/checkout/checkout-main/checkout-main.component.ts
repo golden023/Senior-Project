@@ -5,6 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertService } from '../../_services';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../_services';
+import { User } from '../../_models';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-checkout-main',
@@ -26,16 +30,19 @@ export class CheckoutMainComponent implements OnInit {
   submitted = false;
   loading = false;
   poNum;
+  currentUser: User;
+  userID: number;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private cartService: CartService,
     private route:ActivatedRoute,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private authenticationService: AuthenticationService,
   ) { 
     this.lkit = this.cartService.getItem();
-    this.poNum = this.cartService.getPO();
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
   ngOnInit() {
@@ -51,6 +58,7 @@ export class CheckoutMainComponent implements OnInit {
       shippingAdd: ['', Validators.required]
     });
     console.log(this.lkit);
+
   }
 
   f(){
@@ -84,15 +92,35 @@ export class CheckoutMainComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log("PO NUmber")
-    console.log(this.poNum);
+ 
     // stop here if form is invalid
     if (this.customerForm.invalid) {
       return;
     }
+
+    if (this.currentUser){
+      this.userID = this.currentUser.id;
+    } else
+    {
+      this.userID = 0;
+    }
+    for (var kit of this.lkit){
+      console.log("Purchasedetail " + kit.KitName)
+      this.cartService.purchasedetail(kit.KitID,kit.KitName,this.poNum)
+        .pipe()
+        .subscribe(
+          data => {
+            this.alertService.success('Purchase successful', true);
+          },
+          error => {
+            this.alertService.error(error);
+            this.loading = false;
+          });
+    }
     
     this.loading = true;
-    this.cartService.purchase(this.customerForm.value, this.lkit, this.poNum)
+
+      this.cartService.purchase(this.customerForm.value, this.poNum, this.userID)
       .pipe()
       .subscribe(
         data => {
@@ -102,7 +130,7 @@ export class CheckoutMainComponent implements OnInit {
         error => {
           this.alertService.error(error);
           this.loading = false;
-        });
+        });    
   }
 
   getPO(){

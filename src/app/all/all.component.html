@@ -4,38 +4,31 @@
         <h1>ALL KITS</h1>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <div class="row display-flex">
-                <div class="col-md-3 col-sm-6" *ngFor="let kit of kits">
-                    <div class="row product-grid">
-                        <div class="product-image">
-                            <a class="kit-page" data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
-                                <img src={{kit.Image}}>
-                            </a>
-                            <ul class="social">
-                                <li><a data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
-                                        <i class="fas fa-eye"></i>
-                                    </a></li>
-                                <li><a data-tip="Add to Wishlist" data-target="#product-view" (click)="wishKit(kit)">
-                                        <i class='fas fa-heart'></i>
-                                    </a></li>
-                            </ul>
-                            <div class="product-new-label" *ngIf="kit.NewFlag=='New'">{{kit.NewFlag}}</div>
-                            <div class="product-discount-label">-{{kit.Discount | percent}}</div>
+        <div class="col-md-3 col-sm-6" *ngFor="let kit of kits">
+            <div class="product-image product-grid">
+                <a class="img kit-page" data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
+                    <img src={{kit.Image}}>
+                </a>
+                <ul class="social">
+                    <li><a data-toggle="modal" data-target="#product-view" (click)="openKit(kit)">
+                            <i class="fas fa-eye"></i>
+                        </a></li>
+                    <li><a data-tip="Add to Wishlist" data-target="#product-view" (click)="wishKit(kit)">
+                            <i class='fas fa-heart'></i>
+                        </a></li>
+                </ul>
+                <div class="new-flag" *ngIf="kit.NewFlag=='New'">{{kit.NewFlag}}</div>
+                <div class="discount-flag">-{{kit.Discount | percent}}</div>
+                <div class="row">   
+                    <div class="col-12"> 
+                        <h3 class="title text-center">{{kit.KitName}}</h3>
+                        <div class="price-new text-left">{{kit.PriceDis | currency }}
+                        <div class="price-old text-right">{{kit.Price | currency }}</div>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <h3 class="title">{{kit.KitName}}</h3>
-                                <div class="price">
-                                    {{kit.PriceDis | currency }}
-                                    <span>{{kit.Price | currency }}</span>
-                                </div>
-
-                            </div>
-                        </div>
+                        
                     </div>
-                    <div class="text-center"><button (click)="addToCart(kit)">Add to Cart</button></div>
                 </div>
+                <div class="text-center"><button (click)="addToCart(kit)">Add to Cart</button></div>
             </div>
         </div>
     </div>
@@ -54,12 +47,7 @@
                         </div>
                         <div class="col-md-6 product_content">
                             <h4>Product Id: <span>{{this?.openkit?.KitID}}</span></h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has
-                                been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                                took a
-                                galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy
-                                text of the printing and typesetting industry.</p>
+                            <p>{{this?.openkit?.Description}}</p>
                             <h3 class="cost">{{this?.openkit?.PriceDis | currency }}
                                 <span><small class="pre-cost">{{this?.openkit?.Price | currency }}</small></span></h3>
                             <div class="row">

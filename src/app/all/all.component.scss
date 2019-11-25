@@ -1,21 +1,58 @@
-.row {
-  margin: auto;
-  width: 98.55%;
-}
-.row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-}
-.row > [class*='col-'] {
-	 display: flex;
-	 flex-direction: column;
+.page {
+  display: table;
+  width: 100%;
 }
 .col.bottom {
   position:absolute;
   bottom:0;
 }
+img { 
+  width: 100%;
+  height: auto;
+}
+.new-flag{
+  color: #fff;
+  background-color: maroon;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  margin: 2px 20px 2px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+.discount-flag {
+  color: #fff;
+  background-color: grey;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  margin: 2px 20px 2px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+.price-new {
+  color: maroon;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 2px 15px 0;
+  display: inline-block;
+}
+.price-old {
+  color: #909090;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-decoration: line-through;
+  display: inline-block;
+}
+.title {
+  height: 30px;
+}
+
 form h3 {
   text-align: left;
   color: black;
@@ -42,7 +79,9 @@ input[type="submit"] {
   max-width: 100%;
 }
 .btn-ground button {
-  float: left; /* Float the buttons side by side */
+  display: inline-block;
+  width: 180px;
+  margin: 2px 20px 2px;
 }
 
 .btn-ground button:not(:last-child) {
