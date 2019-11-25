@@ -19,8 +19,6 @@ import { TrackingComponent } from './tracking/tracking.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ShippinginfoComponent } from './shippinginfo/shippinginfo.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
-import { BirthdayComponent } from './birthday/birthday.component';
-import { TailgateComponent } from './tailgate/tailgate.component';
 import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
 import { TermsComponent } from './terms/terms.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
@@ -92,14 +90,6 @@ const routes: Routes = [
   {
     path: 'privacypolicy',
     component: PrivacypolicyComponent
-  },
-  {
-    path: 'birthday',
-    component: BirthdayComponent
-  },
-  {
-    path: 'tailgate',
-    component: TailgateComponent
   },
   {
     path: 'returnpolicy',

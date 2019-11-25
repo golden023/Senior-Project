@@ -8,6 +8,33 @@ export interface KIT {
     NewFlag: string,
     DefaultQnt: number,
     ShippingCost: number,
+    Description: string
+}
+
+export interface CUSTOMER {
+    email: string,
+    firstName: string,
+    lastName: string,
+    phoneNumber: string,
+    shippingAdd: string
+}
+
+export interface PURCHASE {
+    customer: CUSTOMER,
+    ponum: Number,
+    userid: Number
+}
+
+export interface PURCHASEINFO {
+    OrderID: number,
+    OrderDate: Date,
+    KitName: string
+}
+
+export interface ORDERDETAIL {
+    ponum: Number,
+    kitname: String,
+    kitid: String
 }
 
 export interface TOTALS {

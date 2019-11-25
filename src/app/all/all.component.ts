@@ -1,8 +1,7 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { KIT } from '../_models/kit';
 import { KitsService, AuthenticationService } from '../_services';
-import { CartService } from '../_services/cart.service';
-import { Title } from '@angular/platform-browser';
+import { CartService } from '../_services/cart.service'
 
 
 @Component({
@@ -20,8 +19,7 @@ export class AllComponent implements OnInit {
   constructor(
     private service: KitsService,
     private cartService: CartService,
-    private authenticationService: AuthenticationService,
-    private titleService: Title
+    private authenticationService: AuthenticationService
   ) { }
   ngOnInit(): void {
     this.getKits();
@@ -35,6 +33,7 @@ export class AllComponent implements OnInit {
   }
 
   addToCart(KIT) {
+    window.alert('Your kit has been added to the cart!');
     this.cartService.addToCart(KIT);
   }
   openKit(KIT): void {
@@ -42,17 +41,13 @@ export class AllComponent implements OnInit {
     this.openkit = KIT
   }
   addToWish(KIT) {
-    this.cartService.addToCart(KIT);
+    this.cartService.addToWishList(KIT);
   }
   wishKit(KIT) {
     window.alert('Kit has been added to your wishlist');
     this.cartService.addToWishList(KIT);
   }
-  
   getserver() {
     return this.authenticationService.getServer();
-  }
-  public setTitle(newTitle: string) {
-    this.titleService.setTitle(newTitle);
   }
 }

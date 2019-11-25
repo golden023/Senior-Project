@@ -55,7 +55,7 @@
         <div class="col-lg-3 col-sm-6" *ngFor="let kit of tkits">
             <div class="thumbnail">
                 <a [routerLink]="['/kitPage',kit.KitID]">
-                    <img src="{{kit.Image}}" alt="Nature" style="width:100%">
+                    <img src="{{kit.Image}}">
                     <div class="caption">
                         <p>{{kit.KitName}}</p>
                     </div>

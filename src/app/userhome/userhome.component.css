@@ -6,10 +6,9 @@ img {
     font-size: 20px;
 }
 
-.price {
+.title {
     font-size: 20px;
-    text-align: right;
-
+    font-weight: bold;
 }
 p {
     margin-left: 20px;

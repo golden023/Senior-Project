@@ -1,0 +1,99 @@
+.page {
+    display: table;
+    width: 100%;
+  }
+  .col.bottom {
+    position:absolute;
+    bottom:0;
+  }
+  img { 
+    width: 100%;
+    height: auto;
+  }
+  .new-flag{
+    color: #fff;
+    background-color: maroon;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    margin: 2px 20px 2px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+  .discount-flag {
+    color: #fff;
+    background-color: grey;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    margin: 2px 20px 2px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+  .price-new {
+    color: maroon;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 2px 15px 0;
+    display: inline-block;
+  }
+  .price-old {
+    color: #909090;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-decoration: line-through;
+    display: inline-block;
+  }
+  .title {
+    height: 30px;
+  }
+  
+  form h3 {
+    text-align: left;
+    color: black;
+    font-size: medium;
+    margin-top: 1%;
+  }
+  input[type="submit"] {
+    background: maroon;
+    color: white;
+    margin-top: 3%;
+    margin-right: 3%;
+  }
+  .product_view .modal-dialog {
+    width: 1000px;
+  }
+  .pre-cost {
+    text-decoration: line-through;
+    color: #a5a5a5;
+  }
+  .space-ten {
+    padding: 10px 0;
+  }
+  .modal-body img{
+    max-width: 100%;
+  }
+  .btn-ground button {
+    display: inline-block;
+    width: 180px;
+    margin: 2px 20px 2px;
+  }
+  
+  .btn-ground button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-ground:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .modal-body p{
+    font-size: small;
+  }
