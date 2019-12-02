@@ -36,6 +36,8 @@ import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
 import { TermsComponent } from './terms/terms.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { MyaccountComponent } from './myaccount/myaccount.component';
+import { BirthdayComponent } from './birthday/birthday.component';
+import { TailgateComponent } from './tailgate/tailgate.component';
 
 
 
@@ -81,7 +83,9 @@ import { MyaccountComponent } from './myaccount/myaccount.component';
     ReturnpolicyComponent,
     TermsComponent,
     WishlistComponent,
-    MyaccountComponent
+    MyaccountComponent,
+    BirthdayComponent,
+    TailgateComponent
   ],
   providers: [
     Title
