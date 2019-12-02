@@ -22,8 +22,6 @@ import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component'
 import { ReturnpolicyComponent } from './returnpolicy/returnpolicy.component';
 import { TermsComponent } from './terms/terms.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { TailgateComponent } from './tailgate/tailgate.component';
-import { BirthdayComponent } from './birthday/birthday.component';
 
 const routes: Routes = [
   {
@@ -102,14 +100,6 @@ const routes: Routes = [
     component: TermsComponent
   },
   {
-    path: 'birthday',
-    component: BirthdayComponent
-  },
-  {
-    path: 'tailgate',
-    component: TailgateComponent
-  },
-  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -133,3 +123,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
