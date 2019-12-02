@@ -1,0 +1,27 @@
+<div class="row">
+
+
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" *ngFor="let kit of ekits">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a class="kit-page" data-toggle="modal" data-target="#product-view">
+                            <img src={{kit.Image}}>
+                        </a>
+                        <span class="product-new-label">{{kit.NewFlag}}</span>
+                        <span class="product-discount-label">-{{kit.Discount | percent}}</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title">{{kit.KitName}}</h3>
+                        <div class="price">
+                            {{kit.PriceDis | currency }}
+                            <span>{{kit.Price | currency }}</span>
+                        </div>
+                        <button (click)="addToCart(kit)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
