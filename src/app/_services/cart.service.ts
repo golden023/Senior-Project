@@ -18,8 +18,14 @@ export class CartService {
 
   constructor(private http: HttpClient) {} 
 
-  addToCart(kit) {
-    this.items.push(kit);
+  addToCart(kit:KIT) {
+    const found = this.items.some(id => id.KitID === kit.KitID)
+    if (!found) this.items.push(kit);
+    return false;
+  }
+  removeFromCart(kit:KIT){
+    const loc = this.items.indexOf(kit);
+    this.items.splice(loc, 1);
   }
 
   addToWishList(kit){

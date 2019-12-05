@@ -7,24 +7,28 @@
             <p>{{kit.KitName}}</p>
             <div>{{kit.KitID}}</div>
         </div>
-        <div class="cart col-5">
+        <div class="cart col-4">
             <span class="input-group border border-dark">
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default btn-number" (click)="subOne();">
                         <span class="glyphicon glyphicon-minus"></span>
-                    </button>
-                </span>
-                <input type="text" class="number form-control input-number border-0 text-center"
-                    value={{this.kit.DefaultQnt}}>
-                <span class="input-group-btn">
+            </button>
+            </span>
+            <input type="text" class="number form-control input-number border-0 text-center" value={{this.kit.DefaultQnt}} min="0">
+            <span class="input-group-btn">
                     <button type="button" class="btn btn-default btn-number" (click)="addOne()">
                         <span class="glyphicon glyphicon-plus"></span>
-                    </button>
-                </span>
+            </button>
+            </span>
             </span>
         </div>
         <div class='cart price col-2'>
             <div>{{kit.PriceDis | currency}}</div>
+        </div>
+        <div class='cart delete col-1'>
+            <button type="button" class="btn btn-default" (click)="RemoveItem()">
+                        <span class="glyphicon glyphicon-trash"></span>
+                </button>
         </div>
     </div>
 </div>

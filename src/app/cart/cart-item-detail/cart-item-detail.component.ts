@@ -1,5 +1,6 @@
 import { Component, OnChanges, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { KIT } from '../../_models/kit';
+import { CartService } from '../../_services/cart.service'
 
 @Component({
   selector: 'app-cart-item-detail',
@@ -11,7 +12,9 @@ export class CartItemDetailComponent implements OnChanges {
   @Output() editedEmitter = new EventEmitter();
   itemCount: number;
   changeLog;
-  constructor() { }
+  constructor(
+    private cartService: CartService,
+  ) { }
 
   ngOnChanges(changes: SimpleChanges) {
     console.log("changes");
@@ -23,7 +26,16 @@ export class CartItemDetailComponent implements OnChanges {
     this.editedEmitter.emit();
   }
   subOne(){
-    this.kit.DefaultQnt = this.kit.DefaultQnt - 1;
+    if (this.kit.DefaultQnt <= 1){
+      this.kit.DefaultQnt = 1;
+      this.editedEmitter.emit();
+    }else{
+      this.kit.DefaultQnt = this.kit.DefaultQnt - 1;
+      this.editedEmitter.emit();
+    } 
+  }
+  RemoveItem(){
+    this.cartService.removeFromCart(this.kit);
     this.editedEmitter.emit();
   }
 }
