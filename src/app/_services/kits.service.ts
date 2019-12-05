@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-
 import { Observable } from 'rxjs';
-
-
 import { KIT, Kit } from '../_models/kit';
-
 
 @Injectable({
   providedIn: 'root'
@@ -16,27 +12,27 @@ export class KitsService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://3.135.129.218:5000/kits')
+    return this.http.get<KIT[]>('https://everydaykits.xyz/kits')
       .pipe();
   }
 
   getEventKits(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://3.135.129.218:5000/eventkits')
+    return this.http.get<KIT[]>('https://everydaykits.xyz/eventkits')
       .pipe();
   }
 
   getGiftKits(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://3.135.129.218:5000/giftkits')
+    return this.http.get<KIT[]>('https://everydaykits.xyz/giftkits')
       .pipe();
   }
 
   getSaleKits(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://3.135.129.218:5000/salekits')
+    return this.http.get<KIT[]>('https://everydaykits.xyz/salekits')
       .pipe();
   }
 
   getTopKits(): Observable<KIT[]> {
-    return this.http.get<KIT[]>('http://3.135.129.218:5000/topkits')
+    return this.http.get<KIT[]>('https://everydaykits.xyz/topkits')
       .pipe();
   }
 
@@ -44,7 +40,7 @@ export class KitsService {
     const options = kitID ?
       { params: new HttpParams().set('kitID', kitID) } : {};
 
-    return this.http.get<KIT[]>(`http://3.135.129.218:5000/singlekit`, options)
+    return this.http.get<KIT[]>(`https://everydaykits.xyz/singlekit`, options)
       .pipe();
   }
 }

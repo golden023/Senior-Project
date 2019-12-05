@@ -9,14 +9,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<User[]> {
-    return this.http.get<User[]>(`http://3.135.129.218:5000/allusers`);
+    return this.http.get<User[]>(`https://everydaykits.xyz/allusers`);
   }
 
   register(user: User) {
-    return this.http.post(`http://3.135.129.218:5000/registerUser`, user);
+    return this.http.post(`https://everydaykits.xyz/registerUser`, user);
   }
 
   delete(id: number) {
-    return this.http.delete(`http://3.135.129.218:5000/api/${id}`);
+    return this.http.delete(`https://everydaykits.xyz/api/${id}`);
   }
 }

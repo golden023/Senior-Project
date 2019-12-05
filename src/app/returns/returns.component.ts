@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, Form } from '@angular/forms';
 
 
 @Component({
@@ -9,14 +9,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ReturnsComponent implements OnInit {
   checkoutForm: FormGroup;
+  retrieveOrderForm: FormGroup;
+  loginForm: FormGroup;
+  returnReasonForm: FormGroup;
+  loading = false;
+  submitted = false;
+
 
   constructor(
     private formBuilder: FormBuilder,
-
   ) { }
 
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({});
+    this.retrieveOrderForm = this.formBuilder.group({});
+    this.loginForm = this.formBuilder.group({});
+    this.returnReasonForm = this.formBuilder.group({});
   }
 
   onSubmit(){}

@@ -58,21 +58,21 @@ export class CartService {
       ponum,
       userid
     }
-    return this.http.post(`http://3.135.129.218:5000/purchase`, data);
+    return this.http.post(`https://everydaykits.xyz/purchase`, data);
   }
   purchasedetail(kitid, kitname, ponum){
     console.log("Purchaseservie")
-    return this.http.post(`http://3.135.129.218:5000/purchasedetail`, {ponum, kitname, kitid});
+    return this.http.post(`https://everydaykits.xyz/purchasedetail`, {ponum, kitname, kitid});
   }
   getPO(): Observable<number> {
-    return this.http.get<number>('http://3.135.129.218:5000/poNum')
+    return this.http.get<number>('https://everydaykits.xyz/poNum')
       .pipe();
   }
   getOrders(userID: string): Observable<PURCHASEINFO[]> {
     const options = userID ?
       { params: new HttpParams().set('userID', userID) } : {};
 
-    return this.http.get<PURCHASEINFO[]>(`http://3.135.129.218:5000/getOrders`, options)
+    return this.http.get<PURCHASEINFO[]>(`https://everydaykits.xyz/getOrders`, options)
       .pipe();
   }
 
